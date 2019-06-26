@@ -5,9 +5,9 @@
   <subtitle>TECH OTAKUS SAVE THE WORLD</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://weixian13.github.io/"/>
+  <link href="http://yoursite.com/"/>
   <updated>2019-06-26T00:38:59.817Z</updated>
-  <id>http://weixian13.github.io/</id>
+  <id>http://yoursite.com/</id>
   
   <author>
     <name>WeiXian</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://weixian13.github.io/2019/06/26/hello-world/"/>
-    <id>http://weixian13.github.io/2019/06/26/hello-world/</id>
+    <link href="http://yoursite.com/2019/06/26/hello-world/"/>
+    <id>http://yoursite.com/2019/06/26/hello-world/</id>
     <published>2019-06-26T00:38:59.817Z</published>
     <updated>2019-06-26T00:38:59.817Z</updated>
     
