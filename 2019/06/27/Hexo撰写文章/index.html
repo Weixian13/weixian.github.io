@@ -410,34 +410,19 @@
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
-new Valine({
-    el: '#comment' ,
-    notify:false, 
-    verify:false, 
-    appId: '',
-    appKey: '',
-    placeholder: 'ヾﾉ≧∀≦)o欢迎评论!',
-    path:window.location.pathname, 
-    avatar:'mm' 
-});
-
-document.body.addEventListener('click', function(e) {
-    if (e.target.classList.contains('vsubmit')) {
-        const email = document.querySelector('input[type=email]');
-        const nick = document.querySelector('input[name=nick]');
-        if (!email.value || !nick.value) {
-            const str = `<div class="valert txt-center"><div class="vtext">请填写昵称和邮箱！</div></div>`;
-            const vmark = document.querySelector('.vmark');
-            vmark.innerHTML = str;
-            vmark.style.display = 'block';
-
-            setTimeout(function() {
-                vmark.style.display = 'none';
-                vmark.innerHTML = '';
-            }, 2500);
-        }
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "jmu3qtnrdhAcp3jGbByxL8lv-gzGzoHsz",
+            app_key: "eFYFjSIa0M7BG848I6s5me5ij",
+            placeholder: "Just go go",
+            avatar:"mm"
+        });
     }
-    });
 </script>
   </section>
 
@@ -567,6 +552,14 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">分享</a>
               </li>
              
@@ -584,14 +577,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Typora</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
