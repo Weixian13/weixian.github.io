@@ -5,24 +5,24 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="https://weixian.site">
+  <link rel="dns-prefetch" href="https://weixian13.github.io">
   <title>Go-函数 | WX&#39;s Tune</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="运算符算术运算符+-*/ 逻辑运算符&amp;amp;&amp;amp; || !">
 <meta name="keywords" content="分享,学习,记录,golang,基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Go-函数">
-<meta property="og:url" content="https://weixian.site/2020/10/29/Go-函数/index.html">
+<meta property="og:url" content="https://weixian13.github.io/2020/10/29/Go-函数/index.html">
 <meta property="og:site_name" content="WX&#39;s Tune">
 <meta property="og:description" content="运算符算术运算符+-*/ 逻辑运算符&amp;amp;&amp;amp; || !">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://weixian.site/2020/10/29/Go-函数/1563005182920.png">
-<meta property="og:image" content="https://weixian.site/2020/10/29/Go-函数/1563014612689.png">
+<meta property="og:image" content="https://weixian13.github.io/2020/10/29/Go-函数/1563005182920.png">
+<meta property="og:image" content="https://weixian13.github.io/2020/10/29/Go-函数/1563014612689.png">
 <meta property="og:updated_time" content="2020-10-29T01:22:57.863Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Go-函数">
 <meta name="twitter:description" content="运算符算术运算符+-*/ 逻辑运算符&amp;amp;&amp;amp; || !">
-<meta name="twitter:image" content="https://weixian.site/2020/10/29/Go-函数/1563005182920.png">
+<meta name="twitter:image" content="https://weixian13.github.io/2020/10/29/Go-函数/1563005182920.png">
   
     <link rel="alternative" href="/atom.xml" title="WX&#39;s Tune" type="application/atom+xml">
   
@@ -274,14 +274,14 @@
 <p>多用在函数内部定义函数时使用。</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 函数内部没有办法声明带名字的函数</span></span><br><span class="line">	<span class="comment">// 匿名函数</span></span><br><span class="line">	f1 := <span class="function"><span class="keyword">func</span><span class="params">(x, y <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">		fmt.Println(x + y)</span><br><span class="line">	&#125;</span><br><span class="line">	f1(<span class="number">10</span>, <span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 如果只是调用一次的函数，还可以简写成立即执行函数</span></span><br><span class="line">	<span class="function"><span class="keyword">func</span><span class="params">(x, y <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">		fmt.Println(x + y)</span><br><span class="line">		fmt.Println(<span class="string">"Hello world!"</span>)</span><br><span class="line">	&#125;(<span class="number">100</span>, <span class="number">200</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p><img src="//weixian.site/2020/10/29/Go-函数/1563005182920.png" alt="1563005182920"></p>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p><img src="//weixian13.github.io/2020/10/29/Go-函数/1563005182920.png" alt="1563005182920"></p>
 <h3 id="defer"><a href="#defer" class="headerlink" title="defer"></a>defer</h3><p>defer延迟调用，会把defer后面的语句延迟调用</p>
 <p>把当时的状态都保存</p>
 <p>defer多用于释放资源</p>
 <p>多个defer存在时，按照先进后出的方式去执行。</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">calc</span><span class="params">(index <span class="keyword">string</span>, a, b <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	ret := a + b</span><br><span class="line">	fmt.Println(index, a, b, ret)</span><br><span class="line">	<span class="keyword">return</span> ret</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	a := <span class="number">1</span></span><br><span class="line">	b := <span class="number">2</span></span><br><span class="line">	<span class="keyword">defer</span> calc(<span class="string">"1"</span>, a, calc(<span class="string">"10"</span>, a, b))</span><br><span class="line">	a = <span class="number">0</span></span><br><span class="line">	<span class="keyword">defer</span> calc(<span class="string">"2"</span>, a, calc(<span class="string">"20"</span>, a, b))</span><br><span class="line">	b = <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. a:=1</span></span><br><span class="line"><span class="comment">// 2. b:=2</span></span><br><span class="line"><span class="comment">// 3. defer calc("1", 1, calc("10", 1, 2))</span></span><br><span class="line"><span class="comment">// 4. calc("10", 1, 2) // "10" 1 2 3</span></span><br><span class="line"><span class="comment">// 5. defer calc("1", 1, 3)</span></span><br><span class="line"><span class="comment">// 6. a = 0</span></span><br><span class="line"><span class="comment">// 7. defer calc("2", 0, calc("20", 0, 2))</span></span><br><span class="line"><span class="comment">// 8. calc("20", 0, 2) // "20" 0 2 2</span></span><br><span class="line"><span class="comment">// 9. defer calc("2", 0, 2)</span></span><br><span class="line"><span class="comment">// 10. b = 1</span></span><br><span class="line"><span class="comment">// calc("2", 0, 2) // "2" 0 2 2</span></span><br><span class="line"><span class="comment">// calc("1", 1, 3) // "1" 1 3 4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 最终的答案：</span></span><br><span class="line"><span class="comment">// "10" 1 2 3</span></span><br><span class="line"><span class="comment">// "20" 0 2 2</span></span><br><span class="line"><span class="comment">//  "2" 0 2 2</span></span><br><span class="line"><span class="comment">// "1" 0 3 3</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="内置函数"><a href="#内置函数" class="headerlink" title="内置函数"></a>内置函数</h3><p><img src="//weixian.site/2020/10/29/Go-函数/1563014612689.png" alt="1563014612689"></p>
+<h3 id="内置函数"><a href="#内置函数" class="headerlink" title="内置函数"></a>内置函数</h3><p><img src="//weixian13.github.io/2020/10/29/Go-函数/1563014612689.png" alt="1563014612689"></p>
 <h3 id="panic和recover"><a href="#panic和recover" class="headerlink" title="panic和recover"></a>panic和recover</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">funcA</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">"a"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">funcB</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="comment">// 刚刚打开数据库连接</span></span><br><span class="line">	<span class="keyword">defer</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">		err := <span class="built_in">recover</span>()</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">		fmt.Println(<span class="string">"释放数据库连接..."</span>)</span><br><span class="line">	&#125;()</span><br><span class="line">	<span class="built_in">panic</span>(<span class="string">"出现了严重的错误！！！"</span>) <span class="comment">// 程序崩溃退出</span></span><br><span class="line">	fmt.Println(<span class="string">"b"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">funcC</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">"c"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	funcA()</span><br><span class="line">	funcB()</span><br><span class="line">	funcC()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h3><ol>
@@ -385,7 +385,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://weixian.site/2020/10/29/Go-函数/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://weixian13.github.io/2020/10/29/Go-函数/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -470,8 +470,8 @@
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
+   var notify = 'true' == true ? true : false;
+   var verify = 'true' == true ? true : false;
         new Valine({
             el: '.comment',
             notify: notify,
@@ -631,18 +631,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
@@ -652,6 +640,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Icon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -727,11 +727,11 @@ MathJax.Hub.Queue(function() {
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="https://mooc.study.163.com/university/deeplearning_ai#/c" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>deeplearning.ai</a>
+              <a href="https://www.liwenzhou.com/posts/Go/go_menu/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Golang</a>
             </li>
           
             <li class="search-li">
-              <a href="https://www.wikipedia.org/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>WikiPedia</a>
+              <a href="https://github.com/kamranahmedse/developer-roadmap/tree/master/translations/chinese" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>学习路线推荐</a>
             </li>
           
             <li class="search-li">
@@ -743,19 +743,11 @@ MathJax.Hub.Queue(function() {
             </li>
           
             <li class="search-li">
-              <a href="https://stackoverflow.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Stack Overflow</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://fontawesome.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Icon</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://www.easyicon.net/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>EasyIcon</a>
-            </li>
-          
-            <li class="search-li">
               <a href="https://leancloud.cn/dashboard/applist.html#/apps" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>LearnCloud</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://www.qqxiuzi.cn/bianma/wenbenjiami.php" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>文本加密</a>
             </li>
           
         </ul>
