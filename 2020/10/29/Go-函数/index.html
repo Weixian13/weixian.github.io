@@ -16,13 +16,12 @@
 <meta property="og:site_name" content="WX&#39;s Tune">
 <meta property="og:description" content="运算符算术运算符+-*/ 逻辑运算符&amp;amp;&amp;amp; || !">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://weixian13.github.io/2020/10/29/Go-函数/1563005182920.png">
 <meta property="og:image" content="https://weixian13.github.io/2020/10/29/Go-函数/1563014612689.png">
-<meta property="og:updated_time" content="2020-10-29T01:22:57.863Z">
+<meta property="og:updated_time" content="2020-10-30T06:19:05.967Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Go-函数">
 <meta name="twitter:description" content="运算符算术运算符+-*/ 逻辑运算符&amp;amp;&amp;amp; || !">
-<meta name="twitter:image" content="https://weixian13.github.io/2020/10/29/Go-函数/1563005182920.png">
+<meta name="twitter:image" content="https://weixian13.github.io/2020/10/29/Go-函数/1563014612689.png">
   
     <link rel="alternative" href="/atom.xml" title="WX&#39;s Tune" type="application/atom+xml">
   
@@ -274,7 +273,6 @@
 <p>多用在函数内部定义函数时使用。</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 函数内部没有办法声明带名字的函数</span></span><br><span class="line">	<span class="comment">// 匿名函数</span></span><br><span class="line">	f1 := <span class="function"><span class="keyword">func</span><span class="params">(x, y <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">		fmt.Println(x + y)</span><br><span class="line">	&#125;</span><br><span class="line">	f1(<span class="number">10</span>, <span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 如果只是调用一次的函数，还可以简写成立即执行函数</span></span><br><span class="line">	<span class="function"><span class="keyword">func</span><span class="params">(x, y <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">		fmt.Println(x + y)</span><br><span class="line">		fmt.Println(<span class="string">"Hello world!"</span>)</span><br><span class="line">	&#125;(<span class="number">100</span>, <span class="number">200</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p><img src="//weixian13.github.io/2020/10/29/Go-函数/1563005182920.png" alt="1563005182920"></p>
 <h3 id="defer"><a href="#defer" class="headerlink" title="defer"></a>defer</h3><p>defer延迟调用，会把defer后面的语句延迟调用</p>
 <p>把当时的状态都保存</p>
 <p>defer多用于释放资源</p>
@@ -437,7 +435,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#运算符"><span class="toc-number">1.</span> <span class="toc-text">运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#算术运算符"><span class="toc-number">1.1.</span> <span class="toc-text">算术运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#逻辑运算符"><span class="toc-number">1.2.</span> <span class="toc-text">逻辑运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#位运算符"><span class="toc-number">1.3.</span> <span class="toc-text">位运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#赋值运算符"><span class="toc-number">1.4.</span> <span class="toc-text">赋值运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#比较运算符"><span class="toc-number">1.5.</span> <span class="toc-text">比较运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组（Array）"><span class="toc-number">2.</span> <span class="toc-text">数组（Array）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切片"><span class="toc-number">3.</span> <span class="toc-text">切片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#指针"><span class="toc-number">4.</span> <span class="toc-text">指针</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#map"><span class="toc-number">5.</span> <span class="toc-text">map</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数"><span class="toc-number">6.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#函数的定义"><span class="toc-number">6.1.</span> <span class="toc-text">函数的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本格式"><span class="toc-number">6.1.1.</span> <span class="toc-text">基本格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参数的格式"><span class="toc-number">6.1.2.</span> <span class="toc-text">参数的格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#返回值的格式"><span class="toc-number">6.1.3.</span> <span class="toc-text">返回值的格式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量作用域"><span class="toc-number">6.2.</span> <span class="toc-text">变量作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高阶函数"><span class="toc-number">6.3.</span> <span class="toc-text">高阶函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匿名函数"><span class="toc-number">6.4.</span> <span class="toc-text">匿名函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#闭包"><span class="toc-number">6.5.</span> <span class="toc-text">闭包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#defer"><span class="toc-number">6.6.</span> <span class="toc-text">defer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内置函数"><span class="toc-number">6.7.</span> <span class="toc-text">内置函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#panic和recover"><span class="toc-number">6.8.</span> <span class="toc-text">panic和recover</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#难点"><span class="toc-number">6.9.</span> <span class="toc-text">难点</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#运算符"><span class="toc-number">1.</span> <span class="toc-text">运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#算术运算符"><span class="toc-number">1.1.</span> <span class="toc-text">算术运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#逻辑运算符"><span class="toc-number">1.2.</span> <span class="toc-text">逻辑运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#位运算符"><span class="toc-number">1.3.</span> <span class="toc-text">位运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#赋值运算符"><span class="toc-number">1.4.</span> <span class="toc-text">赋值运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#比较运算符"><span class="toc-number">1.5.</span> <span class="toc-text">比较运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组（Array）"><span class="toc-number">2.</span> <span class="toc-text">数组（Array）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切片"><span class="toc-number">3.</span> <span class="toc-text">切片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#指针"><span class="toc-number">4.</span> <span class="toc-text">指针</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#map"><span class="toc-number">5.</span> <span class="toc-text">map</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数"><span class="toc-number">6.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#函数的定义"><span class="toc-number">6.1.</span> <span class="toc-text">函数的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本格式"><span class="toc-number">6.1.1.</span> <span class="toc-text">基本格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参数的格式"><span class="toc-number">6.1.2.</span> <span class="toc-text">参数的格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#返回值的格式"><span class="toc-number">6.1.3.</span> <span class="toc-text">返回值的格式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量作用域"><span class="toc-number">6.2.</span> <span class="toc-text">变量作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高阶函数"><span class="toc-number">6.3.</span> <span class="toc-text">高阶函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匿名函数"><span class="toc-number">6.4.</span> <span class="toc-text">匿名函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#defer"><span class="toc-number">6.5.</span> <span class="toc-text">defer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内置函数"><span class="toc-number">6.6.</span> <span class="toc-text">内置函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#panic和recover"><span class="toc-number">6.7.</span> <span class="toc-text">panic和recover</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#难点"><span class="toc-number">6.8.</span> <span class="toc-text">难点</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -631,27 +629,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Yilia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Icon</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Typora</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">网站</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Yilia</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -663,11 +657,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">深度学习</a>
+                <a href="javascript:void(0)" class="js-tag color3">题目</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -725,6 +715,10 @@ MathJax.Hub.Queue(function() {
     	<section class="tools-section tools-section-friends" q-show="friends">
   		
         <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="https://studygolang.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>GO语言中文网</a>
+            </li>
           
             <li class="search-li">
               <a href="https://www.liwenzhou.com/posts/Go/go_menu/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Golang</a>
