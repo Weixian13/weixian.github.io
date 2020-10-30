@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="https://weixian13.github.io">
   <title>Go-接口 | WX&#39;s Tune</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#接口 接口(interface)博客:https://www.liwenzhou.com/posts/Go/12_interface/ 接口是一种类型,是一种特殊的类型,它规定了变量有哪些方法.">
+  <meta name="description" content="接口(interface)博客:https://www.liwenzhou.com/posts/Go/12_interface/ 接口是一种类型,是一种特殊的类型,它规定了变量有哪些方法. 在编程中会遇到以下场景:">
 <meta name="keywords" content="分享,学习,记录,golang,基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Go-接口">
 <meta property="og:url" content="https://weixian13.github.io/2020/10/30/Go-接口/index.html">
 <meta property="og:site_name" content="WX&#39;s Tune">
-<meta property="og:description" content="#接口 接口(interface)博客:https://www.liwenzhou.com/posts/Go/12_interface/ 接口是一种类型,是一种特殊的类型,它规定了变量有哪些方法.">
+<meta property="og:description" content="接口(interface)博客:https://www.liwenzhou.com/posts/Go/12_interface/ 接口是一种类型,是一种特殊的类型,它规定了变量有哪些方法. 在编程中会遇到以下场景:">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://weixian13.github.io/2020/10/30/Go-接口/1564211085692.png">
 <meta property="og:image" content="https://weixian13.github.io/2020/10/30/Go-接口/1564211890251.png">
 <meta property="og:image" content="https://weixian13.github.io/2020/10/30/Go-接口/1564213783276.png">
 <meta property="og:image" content="https://weixian13.github.io/2020/10/30/Go-接口/1564213756671.png">
 <meta property="og:image" content="https://weixian13.github.io/2020/10/30/Go-接口/1564216843178.png">
-<meta property="og:updated_time" content="2020-10-30T06:22:06.413Z">
+<meta property="og:updated_time" content="2020-10-30T06:26:38.662Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Go-接口">
-<meta name="twitter:description" content="#接口 接口(interface)博客:https://www.liwenzhou.com/posts/Go/12_interface/ 接口是一种类型,是一种特殊的类型,它规定了变量有哪些方法.">
+<meta name="twitter:description" content="接口(interface)博客:https://www.liwenzhou.com/posts/Go/12_interface/ 接口是一种类型,是一种特殊的类型,它规定了变量有哪些方法. 在编程中会遇到以下场景:">
 <meta name="twitter:image" content="https://weixian13.github.io/2020/10/30/Go-接口/1564211085692.png">
   
     <link rel="alternative" href="/atom.xml" title="WX&#39;s Tune" type="application/atom+xml">
@@ -193,7 +193,7 @@
 &nbsp;
 
         <span class="post-meta-item-text"><a>   字数统计: </span>
-        <span class="post-count">657字</a></span>
+        <span class="post-count">655字</a></span>
       </span>
     </span>
 
@@ -216,11 +216,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#接口</p>
-<h2 id="接口-interface"><a href="#接口-interface" class="headerlink" title="接口(interface)"></a>接口(interface)</h2><p><a href="https://www.liwenzhou.com/posts/Go/12_interface/" target="_blank" rel="noopener">博客:https://www.liwenzhou.com/posts/Go/12_interface/</a></p>
+        <h1 id="接口-interface"><a href="#接口-interface" class="headerlink" title="接口(interface)"></a>接口(interface)</h1><p><a href="https://www.liwenzhou.com/posts/Go/12_interface/" target="_blank" rel="noopener">博客:https://www.liwenzhou.com/posts/Go/12_interface/</a></p>
 <p>接口是一种类型,是一种特殊的类型,它规定了变量有哪些方法.</p>
-<a id="more"></a>
 <p>在编程中会遇到以下场景:</p>
+<a id="more"></a>
 <p>我不关心一个变量是什么类型,我只关心能调用它的什么方法.</p>
 <h3 id="接口的定义"><a href="#接口的定义" class="headerlink" title="接口的定义"></a>接口的定义</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> 接口名 <span class="keyword">interface</span> &#123;</span><br><span class="line">    方法名<span class="number">1</span>(参数<span class="number">1</span>,参数<span class="number">2.</span>..)(返回值<span class="number">1</span>, 返回值<span class="number">2.</span>..)</span><br><span class="line">    方法名<span class="number">2</span>(参数<span class="number">1</span>,参数<span class="number">2.</span>..)(返回值<span class="number">1</span>, 返回值<span class="number">2.</span>..)</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -388,7 +387,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#接口-interface"><span class="toc-number">1.</span> <span class="toc-text">接口(interface)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#接口的定义"><span class="toc-number">1.1.</span> <span class="toc-text">接口的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口的实现"><span class="toc-number">1.2.</span> <span class="toc-text">接口的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用值接收者实现接口与使用指针接收者实现接口的区别"><span class="toc-number">1.3.</span> <span class="toc-text">使用值接收者实现接口与使用指针接收者实现接口的区别?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口和类型的关系"><span class="toc-number">1.4.</span> <span class="toc-text">接口和类型的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口可以嵌套"><span class="toc-number">1.5.</span> <span class="toc-text">接口可以嵌套</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#空接口"><span class="toc-number">1.6.</span> <span class="toc-text">空接口</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包-package"><span class="toc-number">2.</span> <span class="toc-text">包(package)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件操作"><span class="toc-number">3.</span> <span class="toc-text">文件操作</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#接口-interface"><span class="toc-number">1.</span> <span class="toc-text">接口(interface)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#接口的定义"><span class="toc-number">1.0.1.</span> <span class="toc-text">接口的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口的实现"><span class="toc-number">1.0.2.</span> <span class="toc-text">接口的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用值接收者实现接口与使用指针接收者实现接口的区别"><span class="toc-number">1.0.3.</span> <span class="toc-text">使用值接收者实现接口与使用指针接收者实现接口的区别?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口和类型的关系"><span class="toc-number">1.0.4.</span> <span class="toc-text">接口和类型的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口可以嵌套"><span class="toc-number">1.0.5.</span> <span class="toc-text">接口可以嵌套</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#空接口"><span class="toc-number">1.0.6.</span> <span class="toc-text">空接口</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包-package"><span class="toc-number">1.1.</span> <span class="toc-text">包(package)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件操作"><span class="toc-number">1.2.</span> <span class="toc-text">文件操作</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
