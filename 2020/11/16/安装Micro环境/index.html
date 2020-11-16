@@ -6,23 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://weixian13.github.io">
-  <title>Go-time库&amp;日志 | WX&#39;s Tune</title>
+  <title>安装Micro环境 | WX&#39;s Tune</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="time库&amp;amp;日志time标准库时间类型 time.Time">
-<meta name="keywords" content="学习,分享,记录,golang,基础">
+  <meta name="description" content="Micro的安装（MacOS本地安装）1. 安装micro和所需依赖go get -u -v github.com/micro/micro安装过程中因为长城的原因，会有很多依赖下载失败，例如x/net,x/text,x/crypt,grcp等，后面有安装方法。">
+<meta name="keywords" content="学习,分享,记录,golang,微服务">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Go-time库&amp;日志">
-<meta property="og:url" content="https://weixian13.github.io/2020/10/30/Go-time库&日志/index.html">
+<meta property="og:title" content="安装Micro环境">
+<meta property="og:url" content="https://weixian13.github.io/2020/11/16/安装Micro环境/index.html">
 <meta property="og:site_name" content="WX&#39;s Tune">
-<meta property="og:description" content="time库&amp;amp;日志time标准库时间类型 time.Time">
+<meta property="og:description" content="Micro的安装（MacOS本地安装）1. 安装micro和所需依赖go get -u -v github.com/micro/micro安装过程中因为长城的原因，会有很多依赖下载失败，例如x/net,x/text,x/crypt,grcp等，后面有安装方法。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://weixian13.github.io/2020/10/30/Go-time库&日志/1564804613962.png">
-<meta property="og:image" content="https://weixian13.github.io/2020/10/30/Go-time库&日志/1564814836624.png">
-<meta property="og:updated_time" content="2020-10-30T10:57:54.602Z">
+<meta property="og:updated_time" content="2020-11-16T08:28:28.044Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Go-time库&amp;日志">
-<meta name="twitter:description" content="time库&amp;amp;日志time标准库时间类型 time.Time">
-<meta name="twitter:image" content="https://weixian13.github.io/2020/10/30/Go-time库&日志/1564804613962.png">
+<meta name="twitter:title" content="安装Micro环境">
+<meta name="twitter:description" content="Micro的安装（MacOS本地安装）1. 安装micro和所需依赖go get -u -v github.com/micro/micro安装过程中因为长城的原因，会有很多依赖下载失败，例如x/net,x/text,x/crypt,grcp等，后面有安装方法。">
   
     <link rel="alternative" href="/atom.xml" title="WX&#39;s Tune" type="application/atom+xml">
   
@@ -155,20 +152,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Go-time库&amp;日志" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-安装Micro环境" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Go-time库&amp;日志
+      安装Micro环境
     </h1>
   
 
         
-        <a href="/2020/10/30/Go-time库&日志/" class="archive-article-date">
-  	<time datetime="2020-10-30T09:39:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-30</time>
+        <a href="/2020/11/16/安装Micro环境/" class="archive-article-date">
+  	<time datetime="2020-11-16T08:22:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-16</time>
 </a>
 
 
@@ -190,7 +187,7 @@
 &nbsp;
 
         <span class="post-meta-item-text"><a>   字数统计: </span>
-        <span class="post-count">1k字</a></span>
+        <span class="post-count">191字</a></span>
       </span>
     </span>
 
@@ -199,7 +196,7 @@
       <span class="post-meta-item-icon">
         <i class="fas fa-book"></i>
         <span class="post-meta-item-text"><a>  阅读时长:</span>
-        <span class="post-count">4分钟</a></span></div>
+        <span class="post-count">1分钟</a></span></div>
 </a>
       </span>
     </span>
@@ -213,62 +210,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="time库-amp-日志"><a href="#time库-amp-日志" class="headerlink" title="time库&amp;日志"></a>time库&amp;日志</h1><h2 id="time标准库"><a href="#time标准库" class="headerlink" title="time标准库"></a>time标准库</h2><h3 id="时间类型-time-Time"><a href="#时间类型-time-Time" class="headerlink" title="时间类型 time.Time"></a>时间类型 time.Time</h3><a id="more"></a>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">now := time.Now()</span><br><span class="line">fmt.Println(now)</span><br><span class="line">fmt.Println(now.Year())</span><br><span class="line">fmt.Println(now.Month())</span><br><span class="line">fmt.Println(now.Day())</span><br><span class="line">fmt.Println(now.Date())</span><br><span class="line">fmt.Println(now.Hour())</span><br><span class="line">fmt.Println(now.Minute())</span><br><span class="line">fmt.Println(now.Second())</span><br></pre></td></tr></table></figure>
+        <h1 id="Micro的安装（MacOS本地安装）"><a href="#Micro的安装（MacOS本地安装）" class="headerlink" title="Micro的安装（MacOS本地安装）"></a>Micro的安装（MacOS本地安装）</h1><h2 id="1-安装micro和所需依赖"><a href="#1-安装micro和所需依赖" class="headerlink" title="1. 安装micro和所需依赖"></a>1. 安装micro和所需依赖</h2><pre><code>go get -u -v github.com/micro/micro</code></pre><p>安装过程中因为长城的原因，会有很多依赖下载失败，例如x/net,x/text,x/crypt,grcp等，后面有安装方法。</p>
+<a id="more"></a>
+<h2 id="2-安装consul"><a href="#2-安装consul" class="headerlink" title="2. 安装consul"></a>2. 安装consul</h2><pre><code>brew install consul</code></pre><h2 id="3-安装Protobuf"><a href="#3-安装Protobuf" class="headerlink" title="3. 安装Protobuf"></a>3. 安装Protobuf</h2><pre><code>brew install protobuf
+go get -u -v github.com/golang/protobuf/{proto,protoc-gen-go}
+go get -u -v github.com/micro/protoc-gen-micro</code></pre><h2 id="4-安装grpc和genproto"><a href="#4-安装grpc和genproto" class="headerlink" title="4. 安装grpc和genproto"></a>4. 安装grpc和genproto</h2><pre><code>mkdir $GOPATH/src/google.golang.org
+cd $GOPATH/src/google.golang.org
 
-<h3 id="时间戳"><a href="#时间戳" class="headerlink" title="时间戳"></a>时间戳</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 时间戳</span></span><br><span class="line">fmt.Println(now.Unix())</span><br><span class="line">fmt.Println(now.UnixNano())</span><br><span class="line"><span class="comment">// time.Unix()</span></span><br><span class="line">ret := time.Unix(<span class="number">1564803667</span>, <span class="number">0</span>)</span><br><span class="line">fmt.Println(ret)</span><br><span class="line">fmt.Println(ret.Year())</span><br><span class="line">fmt.Println(ret.Day())</span><br></pre></td></tr></table></figure>
+git clone https://github.com/grpc/grpc-go.git grpc
+git clone https://github.com/google/go-genproto.git genproto</code></pre><h2 id="5-安装-golang的net-crypt-text库"><a href="#5-安装-golang的net-crypt-text库" class="headerlink" title="5. 安装 golang的net,crypt,text库"></a>5. 安装 golang的net,crypt,text库</h2><pre><code>mkdir -p $GOPATH/src/golang.org/x
+cd $GOPATH/src/golang.org/x
 
-<h3 id="时间间隔"><a href="#时间间隔" class="headerlink" title="时间间隔"></a>时间间隔</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 时间间隔</span></span><br><span class="line">fmt.Println(time.Second)</span><br><span class="line"><span class="comment">// now + 24小时</span></span><br><span class="line">fmt.Println(now.Add(<span class="number">24</span> * time.Hour))</span><br></pre></td></tr></table></figure>
-
-<h3 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">timer := time.Tick(time.Second)</span><br><span class="line"><span class="keyword">for</span> t := <span class="keyword">range</span> timer &#123;</span><br><span class="line">	fmt.Println(t) <span class="comment">// 1秒钟执行一次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="格式化时间"><a href="#格式化时间" class="headerlink" title="格式化时间"></a>格式化时间</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 格式化时间 把语言中时间对象 转换成字符串类型的时间</span></span><br><span class="line"><span class="comment">// 2019-08-03</span></span><br><span class="line">fmt.Println(now.Format(<span class="string">"2006-01-02"</span>))</span><br><span class="line"><span class="comment">// 2019/02/03 11:55:02</span></span><br><span class="line">fmt.Println(now.Format(<span class="string">"2006/01/02 15:04:05"</span>))</span><br><span class="line"><span class="comment">// 2019/02/03 11:55:02 AM</span></span><br><span class="line">fmt.Println(now.Format(<span class="string">"2006/01/02 03:04:05 PM"</span>))</span><br><span class="line"><span class="comment">// // 2019/02/03 11:55:02.342</span></span><br><span class="line">fmt.Println(now.Format(<span class="string">"2006/01/02 15:04:05.000"</span>))</span><br><span class="line"><span class="comment">// 按照对应的格式解析字符串类型的时间</span></span><br><span class="line">timeObj, err := time.Parse(<span class="string">"2006-01-02"</span>, <span class="string">"2019-08-03"</span>)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">	fmt.Printf(<span class="string">"parse time failed, err:%v\n"</span>, err)</span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line">fmt.Println(timeObj)</span><br><span class="line">fmt.Println(timeObj.Unix())</span><br></pre></td></tr></table></figure>
-
-<p><img src="//weixian13.github.io/2020/10/30/Go-time库&日志/1564804613962.png" alt="1564804613962"></p>
-<p><img src="//weixian13.github.io/2020/10/30/Go-time库&日志/1564814836624.png" alt="1564814836624"></p>
-<h2 id="日志库"><a href="#日志库" class="headerlink" title="日志库"></a>日志库</h2><h3 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h3><ol>
-<li><p>支持往不同的地方输出日志</p>
-</li>
-<li><p>日志分级别</p>
-<ol>
-<li>Debug</li>
-<li>Trace</li>
-<li>Info</li>
-<li>Warning</li>
-<li>Error</li>
-<li>Fatal</li>
-</ol>
-</li>
-<li><p>日志要支持开关控制，比如说开发的时候什么级别都能输出，但是上线之后只有INFO级别往下的才能输出</p>
-</li>
-<li><p>完整的日志记录要包含有时间、行号、文件名、日志级别、日志信息</p>
-</li>
-<li><p>日志文件要切割</p>
-<ol>
-<li>按文件大小切割 <ol>
-<li>每次记录日志之前都判断一下当前写的这个文件的文件大小</li>
-</ol>
-</li>
-<li>按日期切割<ol>
-<li>在日志结构体中设置一个字段记录上一次切割的小时数</li>
-<li>在写日志之前检查一下当前时间的小时数和之前保存的是否一致，不一致就要切割</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h3><p><strong>反射只需要了解原理即可，不必过分纠结于此</strong></p>
-<h4 id="反射的应用"><a href="#反射的应用" class="headerlink" title="反射的应用"></a>反射的应用</h4><p><code>json</code>反序列化就是反射的应用。</p>
-<p><code>{&quot;name:&quot;zhoulin&quot;, &quot;age&quot;:9000}</code></p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> person <span class="keyword">struct</span> &#123;</span><br><span class="line">    Name <span class="keyword">string</span> <span class="string">``</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="反射的两个方法"><a href="#反射的两个方法" class="headerlink" title="反射的两个方法"></a>反射的两个方法</h3><p><code>reflect.TypeOf</code>和<code>reflect.ValueOf</code></p>
-<p>type又分为<code>Name()</code>,<code>Kind()</code></p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"reflect"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Cat <span class="keyword">struct</span> &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">reflectType</span><span class="params">(x <span class="keyword">interface</span>&#123;&#125;)</span></span> &#123;</span><br><span class="line">	v := reflect.TypeOf(x)</span><br><span class="line">	fmt.Printf(<span class="string">"type:%v\n"</span>, v)</span><br><span class="line">	fmt.Printf(<span class="string">"type name:%v type kind:%v\n"</span>, v.Name(), v.Kind())</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">reflectValue</span><span class="params">(x <span class="keyword">interface</span>&#123;&#125;)</span></span> &#123;</span><br><span class="line">	v := reflect.ValueOf(x)</span><br><span class="line">	k := v.Kind() <span class="comment">// 值的类型种类</span></span><br><span class="line">	<span class="keyword">switch</span> k &#123;</span><br><span class="line">	<span class="keyword">case</span> reflect.Int64:</span><br><span class="line">		<span class="comment">// v.Int()从反射中获取整型的原始值，然后通过int64()强制类型转换</span></span><br><span class="line">		fmt.Printf(<span class="string">"type is int64, value is %d\n"</span>, <span class="keyword">int64</span>(v.Int()))</span><br><span class="line">	<span class="keyword">case</span> reflect.Float32:</span><br><span class="line">		<span class="comment">// v.Float()从反射中获取整型的原始值，然后通过float32()强制类型转换</span></span><br><span class="line">		fmt.Printf(<span class="string">"type is float32, value is %f\n"</span>, <span class="keyword">float32</span>(v.Float()))</span><br><span class="line">	<span class="keyword">case</span> reflect.Float64:</span><br><span class="line">		<span class="comment">// v.Float()从反射中获取整型的原始值，然后通过float64()强制类型转换</span></span><br><span class="line">		fmt.Printf(<span class="string">"type is float64, value is %f\n"</span>, <span class="keyword">float64</span>(v.Float()))</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过反射设置变量的值</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">reflectSetValue1</span><span class="params">(x <span class="keyword">interface</span>&#123;&#125;)</span></span> &#123;</span><br><span class="line">	v := reflect.ValueOf(x)</span><br><span class="line">	<span class="keyword">if</span> v.Kind() == reflect.Int64 &#123;</span><br><span class="line">		v.SetInt(<span class="number">200</span>) <span class="comment">//修改的是副本，reflect包会引发panic</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">reflectSetValue2</span><span class="params">(x <span class="keyword">interface</span>&#123;&#125;)</span></span> &#123;</span><br><span class="line">	v := reflect.ValueOf(x)</span><br><span class="line">	<span class="keyword">if</span> v.Elem().Kind() == reflect.Int64 &#123;</span><br><span class="line">		v.Elem().SetInt(<span class="number">200</span>) <span class="comment">//修改的是副本，reflect包会引发panic</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> a <span class="keyword">float32</span> = <span class="number">3.14</span></span><br><span class="line">	reflectType(a) <span class="comment">// type:float32</span></span><br><span class="line">	<span class="keyword">var</span> b <span class="keyword">int64</span> = <span class="number">100</span></span><br><span class="line">	reflectType(b) <span class="comment">// type:int64</span></span><br><span class="line">	<span class="keyword">var</span> c = Cat&#123;&#125;</span><br><span class="line">	reflectType(c)</span><br><span class="line">	<span class="comment">// ValueOf</span></span><br><span class="line">	reflectValue(a)</span><br><span class="line">	<span class="comment">// 设置值</span></span><br><span class="line">	<span class="comment">// reflectSetValue1(&amp;b)</span></span><br><span class="line">	reflectSetValue2(&amp;b)</span><br><span class="line">	fmt.Println(b)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="结构体反射"><a href="#结构体反射" class="headerlink" title="结构体反射"></a>结构体反射</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"reflect"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> student <span class="keyword">struct</span> &#123;</span><br><span class="line">	Name  <span class="keyword">string</span> <span class="string">`json:"name" zhoulin:"嘿嘿嘿"`</span></span><br><span class="line">	Score <span class="keyword">int</span>    <span class="string">`json:"score" zhoulin:"哈哈哈"`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	stu1 := student&#123;</span><br><span class="line">		Name:  <span class="string">"小王子"</span>,</span><br><span class="line">		Score: <span class="number">90</span>,</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	t := reflect.TypeOf(stu1)</span><br><span class="line"></span><br><span class="line">	fmt.Println(t.Name(), t.Kind()) <span class="comment">// student struct</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 通过for循环遍历结构体的所有字段信息</span></span><br><span class="line">	fmt.Println(t.NumField()) <span class="comment">// 2</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; t.NumField(); i++ &#123;</span><br><span class="line">		field := t.Field(i)</span><br><span class="line">		fmt.Printf(<span class="string">"name:%s index:%d type:%v json tag:%v\n"</span>, field.Name, field.Index, field.Type, field.Tag.Get(<span class="string">"zhoulin"</span>))</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 通过字段名获取指定结构体字段信息</span></span><br><span class="line">	<span class="keyword">if</span> scoreField, ok := t.FieldByName(<span class="string">"Score"</span>); ok &#123;</span><br><span class="line">		fmt.Printf(<span class="string">"name:%s index:%d type:%v json tag:%v\n"</span>, scoreField.Name, scoreField.Index, scoreField.Type, scoreField.Tag.Get(<span class="string">"json"</span>))</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+git clone https://github.com/golang/net.git
+git clone https://github.com/golang/crypto.git
+git clone https://github.com/golang/text.git</code></pre><h2 id="6-最后安装micro"><a href="#6-最后安装micro" class="headerlink" title="6. 最后安装micro"></a>6. 最后安装micro</h2><pre><code>go install github.com/micro/micro
 
 
+安装完成
+micro --version</code></pre>
       
 
 
@@ -305,7 +264,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
         		</li>
       		
 		</ul>
@@ -361,7 +320,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://weixian13.github.io/2020/10/30/Go-time库&日志/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://weixian13.github.io/2020/11/16/安装Micro环境/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -375,18 +334,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/11/01/Go-并发实现/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Go-并发实现
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/10/30/Go-接口/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Go-接口</div>
+    <a href="/2020/11/07/当我真正开始爱自己-卓别林/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">当我真正开始爱自己-卓别林</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -413,7 +363,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#time库-amp-日志"><span class="toc-number">1.</span> <span class="toc-text">time库&amp;日志</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#time标准库"><span class="toc-number">1.1.</span> <span class="toc-text">time标准库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#时间类型-time-Time"><span class="toc-number">1.1.1.</span> <span class="toc-text">时间类型 time.Time</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#时间戳"><span class="toc-number">1.1.2.</span> <span class="toc-text">时间戳</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#时间间隔"><span class="toc-number">1.1.3.</span> <span class="toc-text">时间间隔</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定时器"><span class="toc-number">1.1.4.</span> <span class="toc-text">定时器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#格式化时间"><span class="toc-number">1.1.5.</span> <span class="toc-text">格式化时间</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#日志库"><span class="toc-number">1.2.</span> <span class="toc-text">日志库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#需求分析"><span class="toc-number">1.2.1.</span> <span class="toc-text">需求分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#反射"><span class="toc-number">1.2.2.</span> <span class="toc-text">反射</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#反射的应用"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">反射的应用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#反射的两个方法"><span class="toc-number">1.2.3.</span> <span class="toc-text">反射的两个方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结构体反射"><span class="toc-number">1.2.4.</span> <span class="toc-text">结构体反射</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Micro的安装（MacOS本地安装）"><span class="toc-number">1.</span> <span class="toc-text">Micro的安装（MacOS本地安装）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-安装micro和所需依赖"><span class="toc-number">1.1.</span> <span class="toc-text">1. 安装micro和所需依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-安装consul"><span class="toc-number">1.2.</span> <span class="toc-text">2. 安装consul</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-安装Protobuf"><span class="toc-number">1.3.</span> <span class="toc-text">3. 安装Protobuf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-安装grpc和genproto"><span class="toc-number">1.4.</span> <span class="toc-text">4. 安装grpc和genproto</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-安装-golang的net-crypt-text库"><span class="toc-number">1.5.</span> <span class="toc-text">5. 安装 golang的net,crypt,text库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-最后安装micro"><span class="toc-number">1.6.</span> <span class="toc-text">6. 最后安装micro</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
