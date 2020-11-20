@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://weixian13.github.io">
   <title>Redis的安装和使用 | WX&#39;s Tune</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MacOS环境下的Redis的安装与使用现今互联网应用中， NoSQL 已经广为应用，在互联网中起到加速系统的作用。主流的 NoSQL 有 Redis 和 MongoDB ，Redis 是一种运行在内存的数据库，支持 7 种数据类型（string 、list 、set 、hash 等）的存储。 Redis 是一个开源、使用 ANSI C 语言编写、遵守 BSD 协议、支持网络、可基于内存亦可持久化">
-<meta name="keywords" content="学习,分享,记录,Reddis,微服务">
+  <meta name="description" content="MacOS环境下的Redis的安装与使用">
+<meta name="keywords" content="分享,学习,记录,微服务,Reddis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis的安装和使用">
 <meta property="og:url" content="https://weixian13.github.io/2020/11/19/Redis的安装和使用/index.html">
 <meta property="og:site_name" content="WX&#39;s Tune">
-<meta property="og:description" content="MacOS环境下的Redis的安装与使用现今互联网应用中， NoSQL 已经广为应用，在互联网中起到加速系统的作用。主流的 NoSQL 有 Redis 和 MongoDB ，Redis 是一种运行在内存的数据库，支持 7 种数据类型（string 、list 、set 、hash 等）的存储。 Redis 是一个开源、使用 ANSI C 语言编写、遵守 BSD 协议、支持网络、可基于内存亦可持久化">
+<meta property="og:description" content="MacOS环境下的Redis的安装与使用">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-11-19T01:33:40.747Z">
+<meta property="og:updated_time" content="2020-11-20T03:08:44.734Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis的安装和使用">
-<meta name="twitter:description" content="MacOS环境下的Redis的安装与使用现今互联网应用中， NoSQL 已经广为应用，在互联网中起到加速系统的作用。主流的 NoSQL 有 Redis 和 MongoDB ，Redis 是一种运行在内存的数据库，支持 7 种数据类型（string 、list 、set 、hash 等）的存储。 Redis 是一个开源、使用 ANSI C 语言编写、遵守 BSD 协议、支持网络、可基于内存亦可持久化">
+<meta name="twitter:description" content="MacOS环境下的Redis的安装与使用">
   
     <link rel="alternative" href="/atom.xml" title="WX&#39;s Tune" type="application/atom+xml">
   
@@ -210,9 +210,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="MacOS环境下的Redis的安装与使用"><a href="#MacOS环境下的Redis的安装与使用" class="headerlink" title="MacOS环境下的Redis的安装与使用"></a>MacOS环境下的Redis的安装与使用</h1><h2 id="现今互联网应用中，-NoSQL-已经广为应用，在互联网中起到加速系统的作用。主流的-NoSQL-有-Redis-和-MongoDB-，Redis-是一种运行在内存的数据库，支持-7-种数据类型（string-、list-、set-、hash-等）的存储。-Redis-是一个开源、使用-ANSI-C-语言编写、遵守-BSD-协议、支持网络、可基于内存亦可持久化的日志型、键值数据库，并提供多种语言的-API-。"><a href="#现今互联网应用中，-NoSQL-已经广为应用，在互联网中起到加速系统的作用。主流的-NoSQL-有-Redis-和-MongoDB-，Redis-是一种运行在内存的数据库，支持-7-种数据类型（string-、list-、set-、hash-等）的存储。-Redis-是一个开源、使用-ANSI-C-语言编写、遵守-BSD-协议、支持网络、可基于内存亦可持久化的日志型、键值数据库，并提供多种语言的-API-。" class="headerlink" title="现今互联网应用中， NoSQL 已经广为应用，在互联网中起到加速系统的作用。主流的 NoSQL 有 Redis 和 MongoDB ，Redis 是一种运行在内存的数据库，支持 7 种数据类型（string 、list 、set 、hash 等）的存储。 Redis 是一个开源、使用 ANSI C 语言编写、遵守 BSD 协议、支持网络、可基于内存亦可持久化的日志型、键值数据库，并提供多种语言的 API 。"></a>现今互联网应用中， NoSQL 已经广为应用，在互联网中起到加速系统的作用。主流的 NoSQL 有 Redis 和 MongoDB ，Redis 是一种运行在内存的数据库，支持 7 种数据类型（string 、list 、set 、hash 等）的存储。 Redis 是一个开源、使用 ANSI C 语言编写、遵守 BSD 协议、支持网络、可基于内存亦可持久化的日志型、键值数据库，并提供多种语言的 API 。</h2><p>Redis 本质上是一个 Key 、 Value 数据库，查询频率高，且查询的都是相同的内容，就可以使用 Redis 做缓存，增加系统性能。</p>
+        <h1 id="MacOS环境下的Redis的安装与使用"><a href="#MacOS环境下的Redis的安装与使用" class="headerlink" title="MacOS环境下的Redis的安装与使用"></a>MacOS环境下的Redis的安装与使用</h1><a id="more"></a>
+
+<h2 id="现今互联网应用中，-NoSQL-已经广为应用，在互联网中起到加速系统的作用。主流的-NoSQL-有-Redis-和-MongoDB-，Redis-是一种运行在内存的数据库，支持-7-种数据类型（string-、list-、set-、hash-等）的存储。-Redis-是一个开源、使用-ANSI-C-语言编写、遵守-BSD-协议、支持网络、可基于内存亦可持久化的日志型、键值数据库，并提供多种语言的-API-。"><a href="#现今互联网应用中，-NoSQL-已经广为应用，在互联网中起到加速系统的作用。主流的-NoSQL-有-Redis-和-MongoDB-，Redis-是一种运行在内存的数据库，支持-7-种数据类型（string-、list-、set-、hash-等）的存储。-Redis-是一个开源、使用-ANSI-C-语言编写、遵守-BSD-协议、支持网络、可基于内存亦可持久化的日志型、键值数据库，并提供多种语言的-API-。" class="headerlink" title="现今互联网应用中， NoSQL 已经广为应用，在互联网中起到加速系统的作用。主流的 NoSQL 有 Redis 和 MongoDB ，Redis 是一种运行在内存的数据库，支持 7 种数据类型（string 、list 、set 、hash 等）的存储。 Redis 是一个开源、使用 ANSI C 语言编写、遵守 BSD 协议、支持网络、可基于内存亦可持久化的日志型、键值数据库，并提供多种语言的 API 。"></a>现今互联网应用中， NoSQL 已经广为应用，在互联网中起到加速系统的作用。主流的 NoSQL 有 Redis 和 MongoDB ，Redis 是一种运行在内存的数据库，支持 7 种数据类型（string 、list 、set 、hash 等）的存储。 Redis 是一个开源、使用 ANSI C 语言编写、遵守 BSD 协议、支持网络、可基于内存亦可持久化的日志型、键值数据库，并提供多种语言的 API 。</h2><p>Redis 本质上是一个 Key 、 Value 数据库，查询频率高，且查询的都是相同的内容，就可以使用 Redis 做缓存，增加系统性能。</p>
 <h2 id="安装-Redis"><a href="#安装-Redis" class="headerlink" title="安装 Redis"></a>安装 Redis</h2><p><a href="https://redis.io/download" target="_blank" rel="noopener">官方网站</a>下载 Stable 稳定版。</p>
-<a id="more"></a>
 <h2 id="Redis-在-Mac-下的安装与使用"><a href="#Redis-在-Mac-下的安装与使用" class="headerlink" title="Redis 在 Mac 下的安装与使用"></a>Redis 在 Mac 下的安装与使用</h2><p>最新稳定版是6.0.9<br>    解压压缩包：tar zxvf redis-6.0.9.tar.gz</p>
 <pre><code>移动目录：sudo mv redis-6.0.9 /usr/local/redis-6.0.9
 
@@ -250,11 +251,11 @@ flushall    消除所有的 key</code></pre><h2 id="Redis-图形客户端"><a hr
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -262,11 +263,11 @@ flushall    消除所有的 key</code></pre><h2 id="Redis-图形客户端"><a hr
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Reddis</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Reddis</a>
         		</li>
       		
 		</ul>
@@ -335,6 +336,15 @@ flushall    消除所有的 key</code></pre><h2 id="Redis-图形客户端"><a hr
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/11/20/TO-Wxy/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          TO Wxy :)
+        
+      </div>
+    </a>
   
   
     <a href="/2020/11/16/安装Micro环境/" id="article-nav-older" class="article-nav-link-wrap">
@@ -539,23 +549,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">题目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Numpy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">分享</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -571,19 +569,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Reddis</a>
+                <a href="javascript:void(0)" class="js-tag color3">题目</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">诗词</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生活</a>
+                <a href="javascript:void(0)" class="js-tag color1">Numpy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -592,6 +586,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Typora</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -604,6 +602,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Yilia</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">诗词</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">生活</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Reddis</a>
               </li>
              
               <li class="article-tag-list-item">
