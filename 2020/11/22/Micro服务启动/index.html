@@ -8,18 +8,20 @@
   <link rel="dns-prefetch" href="https://weixian13.github.io">
   <title>Micro服务启动 | WX&#39;s Tune</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="环境MacOS 11.0.1 go v1.14 Micro v2 gPRC v1.26.0启动consul命令(默认地址127.0.0.1:8500)consul agent -dev -clientservice服务命令(会在当前目录开始创建,我使用的为GOPATH目录)micro new --type service --namespace user.srv src/workspace/scp">
+  <meta name="description" content="环境MacOS 11.0.1 go v1.14 Micro v2 gPRC v1.26.0">
 <meta name="keywords" content="学习,分享,记录,golang,微服务">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Micro服务启动">
 <meta property="og:url" content="https://weixian13.github.io/2020/11/22/Micro服务启动/index.html">
 <meta property="og:site_name" content="WX&#39;s Tune">
-<meta property="og:description" content="环境MacOS 11.0.1 go v1.14 Micro v2 gPRC v1.26.0启动consul命令(默认地址127.0.0.1:8500)consul agent -dev -clientservice服务命令(会在当前目录开始创建,我使用的为GOPATH目录)micro new --type service --namespace user.srv src/workspace/scp">
+<meta property="og:description" content="环境MacOS 11.0.1 go v1.14 Micro v2 gPRC v1.26.0">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-11-22T02:17:35.136Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/Weixian13/img_hexo/main/16.png">
+<meta property="og:updated_time" content="2020-11-22T02:39:35.601Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Micro服务启动">
-<meta name="twitter:description" content="环境MacOS 11.0.1 go v1.14 Micro v2 gPRC v1.26.0启动consul命令(默认地址127.0.0.1:8500)consul agent -dev -clientservice服务命令(会在当前目录开始创建,我使用的为GOPATH目录)micro new --type service --namespace user.srv src/workspace/scp">
+<meta name="twitter:description" content="环境MacOS 11.0.1 go v1.14 Micro v2 gPRC v1.26.0">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Weixian13/img_hexo/main/16.png">
   
     <link rel="alternative" href="/atom.xml" title="WX&#39;s Tune" type="application/atom+xml">
   
@@ -187,7 +189,7 @@
 &nbsp;
 
         <span class="post-meta-item-text"><a>   字数统计: </span>
-        <span class="post-count">653字</a></span>
+        <span class="post-count">666字</a></span>
       </span>
     </span>
 
@@ -213,7 +215,8 @@
         <h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><pre><code>MacOS 11.0.1
 go v1.14
 Micro v2
-gPRC v1.26.0</code></pre><h1 id="启动consul"><a href="#启动consul" class="headerlink" title="启动consul"></a>启动consul</h1><h2 id="命令-默认地址127-0-0-1-8500"><a href="#命令-默认地址127-0-0-1-8500" class="headerlink" title="命令(默认地址127.0.0.1:8500)"></a>命令(默认地址127.0.0.1:8500)</h2><pre><code>consul agent -dev -client</code></pre><h1 id="service服务"><a href="#service服务" class="headerlink" title="service服务"></a>service服务</h1><h2 id="命令-会在当前目录开始创建-我使用的为GOPATH目录"><a href="#命令-会在当前目录开始创建-我使用的为GOPATH目录" class="headerlink" title="命令(会在当前目录开始创建,我使用的为GOPATH目录)"></a>命令(会在当前目录开始创建,我使用的为GOPATH目录)</h2><pre><code>micro new --type service --namespace user.srv src/workspace/scpro/user</code></pre><h2 id="编译proto文件"><a href="#编译proto文件" class="headerlink" title="编译proto文件"></a>编译proto文件</h2><pre><code>cd rc/workspace/scpro/user
+gPRC v1.26.0</code></pre><a id="more"></a>
+<h1 id="启动consul"><a href="#启动consul" class="headerlink" title="启动consul"></a>启动consul</h1><h2 id="命令-默认地址127-0-0-1-8500"><a href="#命令-默认地址127-0-0-1-8500" class="headerlink" title="命令(默认地址127.0.0.1:8500)"></a>命令(默认地址127.0.0.1:8500)</h2><pre><code>consul agent -dev -client</code></pre><h1 id="service服务"><a href="#service服务" class="headerlink" title="service服务"></a>service服务</h1><h2 id="命令-会在当前目录开始创建-我使用的为GOPATH目录"><a href="#命令-会在当前目录开始创建-我使用的为GOPATH目录" class="headerlink" title="命令(会在当前目录开始创建,我使用的为GOPATH目录)"></a>命令(会在当前目录开始创建,我使用的为GOPATH目录)</h2><pre><code>micro new --type service --namespace user.srv src/workspace/scpro/user</code></pre><h2 id="编译proto文件"><a href="#编译proto文件" class="headerlink" title="编译proto文件"></a>编译proto文件</h2><pre><code>cd rc/workspace/scpro/user
 make proto</code></pre><h2 id="查看go-mod所需文件"><a href="#查看go-mod所需文件" class="headerlink" title="查看go mod所需文件"></a>查看go mod所需文件</h2><pre><code>go mod why 
 go mod tidy 
 go mod verify
@@ -265,23 +268,20 @@ service := web.NewService(
         web.Registry(consulReg),
         // web服务监听的ip和port
         web.Address(&quot;127.0.0.1:8080&quot;),
-)</code></pre><h2 id="修改handler-go"><a href="#修改handler-go" class="headerlink" title="修改handler.go"></a>修改handler.go</h2><h3 id="导入gRPC包"><a href="#导入gRPC包" class="headerlink" title="导入gRPC包"></a>导入gRPC包</h3><pre><code>&quot;github.com/micro/go-micro/v2/service/grpc&quot;</code></pre><p><font color="red" size="5">重点！</font><br>将 </p>
-<pre><code>web &quot;path/to/service/web&quot;</code></pre><p>修改为 service服务端的proto包<br>因为web没有proto文件，且当前目录指向为GOROOT目录,而非GOPATH目录<br>因此，我将user/proto/user这个目录复制到了path路径下。<br>因而完整路径为 /usr/local/go/src/path/proto/user。<br>修改后应为 </p>
-<pre><code>web &quot;path/proto/user&quot;</code></pre><br>
-大功告成！！
-应为这个点我整个文件改了3天，这个坑略大，网上也没有类似的情况，我一直以为是gomod文件出现的问题，来来回回修改了也快上百次了。
-成功解决问题后也长舒一口气，后面仔细看看发现这个问题有点低级，居然困扰了我3天，也只能怪自己对流程不够熟悉吧。
-
+)</code></pre><h2 id="修改handler-go"><a href="#修改handler-go" class="headerlink" title="修改handler.go"></a>修改handler.go</h2><h3 id="导入gRPC包"><a href="#导入gRPC包" class="headerlink" title="导入gRPC包"></a>导入gRPC包</h3><pre><code>&quot;github.com/micro/go-micro/v2/service/grpc&quot;</code></pre><p><font color="red" size="5">重点！</font></p>
+<pre><code>web &quot;path/to/service/web&quot;</code></pre><p>将上述引进包修改为 service服务端的proto包<br>因为web没有proto文件，且当前目录指向为GOROOT目录,而非GOPATH目录<br>因此，我将user/proto/user这个目录复制到了path路径下。<br>因而完整路径为 /usr/local/go/src/path/proto/user。<br>修改后应为 </p>
+<pre><code>web &quot;path/proto/user&quot;</code></pre><p>大功告成！！<br>应为这个点我整个文件改了3天，这个坑略大，网上也没有类似的情况，我一直以为是gomod文件出现的问题，来来回回修改了也快上百次了。<br>成功解决问题后也长舒一口气，后面仔细看看发现这个问题有点低级，居然困扰了我3天，也只能怪自己对流程不够熟悉吧。</p>
 <h3 id="WebCall函数的修改"><a href="#WebCall函数的修改" class="headerlink" title="WebCall函数的修改"></a>WebCall函数的修改</h3><pre><code> // 使用grpc创建客户端服务
 cli := grpc.NewService()
 // 客户端服务初始化
 cli.Init()
 
-// 基于后端服务scpro.user创建web客户端
-// NewUserService要和user/proto/user/user.pb.micro.go的NewUserService方法名一致
+// 基于后端服务 scpro.user 创建web客户端
+// NewUserService 要和 user/proto/user/user.pb.micro.go 的 NewUserService方法名一致
 
-webClient := web.NewUserService(&quot;scpro.web&quot;, cli.Client())</code></pre><h2 id="启动-1"><a href="#启动-1" class="headerlink" title="启动"></a>启动</h2><pre><code>go mod tidy
-go run main.go</code></pre>
+webClient := web.NewUserService(&quot;scpro.user&quot;, cli.Client())</code></pre><h2 id="启动-1"><a href="#启动-1" class="headerlink" title="启动"></a>启动</h2><pre><code>go mod tidy
+go run main.go</code></pre><h2 id="web成功访问"><a href="#web成功访问" class="headerlink" title="web成功访问"></a>web成功访问</h2><p><img src="https://raw.githubusercontent.com/Weixian13/img_hexo/main/16.png" alt></p>
+
       
 
 
@@ -430,7 +430,7 @@ go run main.go</code></pre>
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#环境"><span class="toc-number">1.</span> <span class="toc-text">环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#启动consul"><span class="toc-number">2.</span> <span class="toc-text">启动consul</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令-默认地址127-0-0-1-8500"><span class="toc-number">2.1.</span> <span class="toc-text">命令(默认地址127.0.0.1:8500)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#service服务"><span class="toc-number">3.</span> <span class="toc-text">service服务</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令-会在当前目录开始创建-我使用的为GOPATH目录"><span class="toc-number">3.1.</span> <span class="toc-text">命令(会在当前目录开始创建,我使用的为GOPATH目录)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编译proto文件"><span class="toc-number">3.2.</span> <span class="toc-text">编译proto文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看go-mod所需文件"><span class="toc-number">3.3.</span> <span class="toc-text">查看go mod所需文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改main-go"><span class="toc-number">3.4.</span> <span class="toc-text">修改main.go</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动"><span class="toc-number">3.5.</span> <span class="toc-text">启动</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#web服务"><span class="toc-number">4.</span> <span class="toc-text">web服务</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令"><span class="toc-number">4.1.</span> <span class="toc-text">命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看go-mod所需文件-1"><span class="toc-number">4.2.</span> <span class="toc-text">查看go mod所需文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改main-go-1"><span class="toc-number">4.3.</span> <span class="toc-text">修改main.go</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改handler-go"><span class="toc-number">4.4.</span> <span class="toc-text">修改handler.go</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#导入gRPC包"><span class="toc-number">4.4.1.</span> <span class="toc-text">导入gRPC包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WebCall函数的修改"><span class="toc-number">4.4.2.</span> <span class="toc-text">WebCall函数的修改</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动-1"><span class="toc-number">4.5.</span> <span class="toc-text">启动</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#环境"><span class="toc-number">1.</span> <span class="toc-text">环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#启动consul"><span class="toc-number">2.</span> <span class="toc-text">启动consul</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令-默认地址127-0-0-1-8500"><span class="toc-number">2.1.</span> <span class="toc-text">命令(默认地址127.0.0.1:8500)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#service服务"><span class="toc-number">3.</span> <span class="toc-text">service服务</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令-会在当前目录开始创建-我使用的为GOPATH目录"><span class="toc-number">3.1.</span> <span class="toc-text">命令(会在当前目录开始创建,我使用的为GOPATH目录)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编译proto文件"><span class="toc-number">3.2.</span> <span class="toc-text">编译proto文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看go-mod所需文件"><span class="toc-number">3.3.</span> <span class="toc-text">查看go mod所需文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改main-go"><span class="toc-number">3.4.</span> <span class="toc-text">修改main.go</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动"><span class="toc-number">3.5.</span> <span class="toc-text">启动</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#web服务"><span class="toc-number">4.</span> <span class="toc-text">web服务</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令"><span class="toc-number">4.1.</span> <span class="toc-text">命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看go-mod所需文件-1"><span class="toc-number">4.2.</span> <span class="toc-text">查看go mod所需文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改main-go-1"><span class="toc-number">4.3.</span> <span class="toc-text">修改main.go</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改handler-go"><span class="toc-number">4.4.</span> <span class="toc-text">修改handler.go</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#导入gRPC包"><span class="toc-number">4.4.1.</span> <span class="toc-text">导入gRPC包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WebCall函数的修改"><span class="toc-number">4.4.2.</span> <span class="toc-text">WebCall函数的修改</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动-1"><span class="toc-number">4.5.</span> <span class="toc-text">启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web成功访问"><span class="toc-number">4.6.</span> <span class="toc-text">web成功访问</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -648,10 +648,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Reddis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">诗词</a>
               </li>
              
@@ -677,6 +673,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">个人</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Reddis</a>
               </li>
             
             <div class="clearfix"></div>
