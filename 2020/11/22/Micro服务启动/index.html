@@ -17,7 +17,7 @@
 <meta property="og:description" content="环境MacOS 11.0.1 go v1.14 Micro v2 gPRC v1.26.0">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://raw.githubusercontent.com/Weixian13/img_hexo/main/16.png">
-<meta property="og:updated_time" content="2020-11-22T02:46:01.712Z">
+<meta property="og:updated_time" content="2020-11-22T02:50:11.829Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Micro服务启动">
 <meta name="twitter:description" content="环境MacOS 11.0.1 go v1.14 Micro v2 gPRC v1.26.0">
@@ -260,7 +260,7 @@ service := web.NewService(
         web.Address(&quot;127.0.0.1:8080&quot;),
 )</code></pre><h2 id="修改handler-go"><a href="#修改handler-go" class="headerlink" title="修改handler.go"></a>修改handler.go</h2><h3 id="导入gRPC包"><a href="#导入gRPC包" class="headerlink" title="导入gRPC包"></a>导入gRPC包</h3><pre><code>&quot;github.com/micro/go-micro/v2/service/grpc&quot;</code></pre><p><font color="red" size="5">重点！</font></p>
 <pre><code>web &quot;path/to/service/web&quot;</code></pre><p>将上述引进包修改为 service服务端的proto包<br>因为web没有proto文件，且当前目录指向为GOROOT目录,而非GOPATH目录<br>因此，我将user/proto/user这个目录复制到了path路径下。<br>因而完整路径为 /usr/local/go/src/path/proto/user。<br>修改后应为 </p>
-<pre><code>web &quot;path/proto/user&quot;</code></pre><p>大功告成！！<br>应为这个点我整个文件改了3天，这个坑略大，网上也没有类似的情况，我一直以为是gomod文件出现的问题，来来回回修改了也快上百次了。<br>成功解决问题后也长舒一口气，后面仔细看看发现这个问题有点低级，居然困扰了我3天，也只能怪自己对流程不够熟悉吧。</p>
+<pre><code>web &quot;path/proto/user&quot;</code></pre><p>大功告成！！<br>就因为这个点，我整个文件改了3天，网上也没有类似的情况(可能我蠢)<br>我一直以为是gomod文件出现的问题，来来回回修改了也快上百次了<br>成功解决问题后也长舒一口气，后面仔细看看发现这个问题有点低级，居然困扰了我3天，也只能怪自己对流程不够熟悉吧</p>
 <h3 id="WebCall函数的修改"><a href="#WebCall函数的修改" class="headerlink" title="WebCall函数的修改"></a>WebCall函数的修改</h3><pre><code> // 使用grpc创建客户端服务
 cli := grpc.NewService()
 // 客户端服务初始化
@@ -614,6 +614,18 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">题目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Numpy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
@@ -622,11 +634,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+                <a href="javascript:void(0)" class="js-tag color2">Reddis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Reddis</a>
+                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -655,18 +667,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">个人</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">题目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Numpy</a>
               </li>
             
             <div class="clearfix"></div>
