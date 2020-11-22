@@ -149,6 +149,211 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Micro服务启动" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/22/Micro服务启动/">Micro服务启动</a>
+    </h1>
+  
+
+        
+        <a href="/2020/11/22/Micro服务启动/" class="archive-article-date">
+  	<time datetime="2020-11-22T01:01:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-22</time>
+</a>
+
+
+
+
+<!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+           
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div align="center">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;
+
+        <span class="post-meta-item-text"><a>   字数统计: </span>
+        <span class="post-count">653字</a></span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fas fa-book"></i>
+        <span class="post-meta-item-text"><a>  阅读时长:</span>
+        <span class="post-count">3分钟</a></span></div>
+</a>
+      </span>
+    </span>
+</div>
+          
+        <!-- 添加完成 -->
+
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><pre><code>MacOS 11.0.1
+go v1.14
+Micro v2
+gPRC v1.26.0</code></pre><h1 id="启动consul"><a href="#启动consul" class="headerlink" title="启动consul"></a>启动consul</h1><h2 id="命令-默认地址127-0-0-1-8500"><a href="#命令-默认地址127-0-0-1-8500" class="headerlink" title="命令(默认地址127.0.0.1:8500)"></a>命令(默认地址127.0.0.1:8500)</h2><pre><code>consul agent -dev -client</code></pre><h1 id="service服务"><a href="#service服务" class="headerlink" title="service服务"></a>service服务</h1><h2 id="命令-会在当前目录开始创建-我使用的为GOPATH目录"><a href="#命令-会在当前目录开始创建-我使用的为GOPATH目录" class="headerlink" title="命令(会在当前目录开始创建,我使用的为GOPATH目录)"></a>命令(会在当前目录开始创建,我使用的为GOPATH目录)</h2><pre><code>micro new --type service --namespace user.srv src/workspace/scpro/user</code></pre><h2 id="编译proto文件"><a href="#编译proto文件" class="headerlink" title="编译proto文件"></a>编译proto文件</h2><pre><code>cd rc/workspace/scpro/user
+make proto</code></pre><h2 id="查看go-mod所需文件"><a href="#查看go-mod所需文件" class="headerlink" title="查看go mod所需文件"></a>查看go mod所需文件</h2><pre><code>go mod why 
+go mod tidy 
+go mod verify
+go mod graph</code></pre><br>
+
+<p>输出结果：</p>
+<pre><code>src/workspace/scpro/user
+src/workspace/scpro/user</code></pre><h2 id="修改main-go"><a href="#修改main-go" class="headerlink" title="修改main.go"></a>修改main.go</h2><p>添加consul支持的包</p>
+<pre><code>&quot;github.com/micro/go-micro/v2/registry&quot;
+&quot;github.com/micro/go-plugins/registry/consul/v2&quot;</code></pre><p>func main的修改</p>
+<pre><code>    // 新建consul注册器
+consulReg := consul.NewRegistry(
+    // 注册的consul信息
+    registry.Addrs(&quot;127.0.0.1:8500&quot;),
+)
+// New Service
+service := micro.NewService(
+    // 服务名称
+    micro.Name(&quot;user.srv.service.user&quot;),
+    // 服务版本
+    micro.Version(&quot;latest&quot;),
+    // 服务添加consul支持
+    micro.Registry(consulReg),
+)</code></pre><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><pre><code>go mod tidy
+go run main.go</code></pre><h1 id="web服务"><a href="#web服务" class="headerlink" title="web服务"></a>web服务</h1><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><pre><code>micro new --type web --namespace sc.web src/workspace/scpro/web</code></pre><h2 id="查看go-mod所需文件-1"><a href="#查看go-mod所需文件-1" class="headerlink" title="查看go mod所需文件"></a>查看go mod所需文件</h2><pre><code>go mod why 
+go mod tidy 
+go mod verify
+go mod graph</code></pre><br>
+
+<p>输出结果：</p>
+<pre><code>src/workspace/scpro/user
+src/workspace/scpro/user</code></pre><p>## </p>
+<h2 id="修改main-go-1"><a href="#修改main-go-1" class="headerlink" title="修改main.go"></a>修改main.go</h2><p>添加consul支持的包</p>
+<pre><code>&quot;github.com/micro/go-micro/v2/registry&quot;
+&quot;github.com/micro/go-plugins/registry/consul/v2&quot;</code></pre><p>func main的修改</p>
+<pre><code>// 新建consul注册器
+consulReg := consul.NewRegistry(
+        // 注册的consul信息
+        registry.Addrs(&quot;127.0.0.1:8500&quot;),
+)
+// create new web service
+// 新建web服务
+service := web.NewService(
+        // 服务名称
+        web.Name(&quot;scpro.web&quot;),
+        // 服务版本
+        web.Version(&quot;latest&quot;),
+        // 服务添加consul支持
+        web.Registry(consulReg),
+        // web服务监听的ip和port
+        web.Address(&quot;127.0.0.1:8080&quot;),
+)</code></pre><h2 id="修改handler-go"><a href="#修改handler-go" class="headerlink" title="修改handler.go"></a>修改handler.go</h2><h3 id="导入gRPC包"><a href="#导入gRPC包" class="headerlink" title="导入gRPC包"></a>导入gRPC包</h3><pre><code>&quot;github.com/micro/go-micro/v2/service/grpc&quot;</code></pre><p><font color="red" size="5">重点！</font><br>将 </p>
+<pre><code>web &quot;path/to/service/web&quot;</code></pre><p>修改为 service服务端的proto包<br>因为web没有proto文件，且当前目录指向为GOROOT目录,而非GOPATH目录<br>因此，我将user/proto/user这个目录复制到了path路径下。<br>因而完整路径为 /usr/local/go/src/path/proto/user。<br>修改后应为 </p>
+<pre><code>web &quot;path/proto/user&quot;</code></pre><br>
+大功告成！！
+应为这个点我整个文件改了3天，这个坑略大，网上也没有类似的情况，我一直以为是gomod文件出现的问题，来来回回修改了也快上百次了。
+成功解决问题后也长舒一口气，后面仔细看看发现这个问题有点低级，居然困扰了我3天，也只能怪自己对流程不够熟悉吧。
+
+<h3 id="WebCall函数的修改"><a href="#WebCall函数的修改" class="headerlink" title="WebCall函数的修改"></a>WebCall函数的修改</h3><pre><code> // 使用grpc创建客户端服务
+cli := grpc.NewService()
+// 客户端服务初始化
+cli.Init()
+
+// 基于后端服务scpro.user创建web客户端
+// NewUserService要和user/proto/user/user.pb.micro.go的NewUserService方法名一致
+
+webClient := web.NewUserService(&quot;scpro.web&quot;, cli.Client())</code></pre><h2 id="启动-1"><a href="#启动-1" class="headerlink" title="启动"></a>启动</h2><pre><code>go mod tidy
+go run main.go</code></pre>
+      
+
+
+
+
+  <div class="declare" hidden="hidden"></div>
+
+
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/11/22/Micro服务启动/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-micro微服务的启动" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -495,11 +700,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Reddis</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Reddis</a>
         		</li>
       		
 		</ul>
@@ -1345,141 +1550,6 @@
 
 
   
-    <article id="post-Go-结构体" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/29/Go-结构体/">Go-结构体</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/29/Go-结构体/" class="archive-article-date">
-  	<time datetime="2020-10-29T01:25:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-29</time>
-</a>
-
-
-
-
-<!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-           
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div align="center">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;
-
-        <span class="post-meta-item-text"><a>   字数统计: </span>
-        <span class="post-count">783字</a></span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fas fa-book"></i>
-        <span class="post-meta-item-text"><a>  阅读时长:</span>
-        <span class="post-count">3分钟</a></span></div>
-</a>
-      </span>
-    </span>
-</div>
-          
-        <!-- 添加完成 -->
-
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="结构体-struct"><a href="#结构体-struct" class="headerlink" title="结构体(struct)"></a>结构体(struct)</h1><h3 id="结构体定义"><a href="#结构体定义" class="headerlink" title="结构体定义"></a>结构体定义</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> 结构体名 <span class="keyword">struct</span>&#123;</span><br><span class="line">    字段<span class="number">1</span> 字段<span class="number">1</span>的类型</span><br><span class="line">    字段<span class="number">2</span> 字段<span class="number">2</span>的类型</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-      
-
-
-
-
-  <div class="declare" hidden="hidden"></div>
-
-
-
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/29/Go-结构体/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1652,11 +1722,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Reddis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+                <a href="javascript:void(0)" class="js-tag color3">诗词</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">生活</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1669,14 +1747,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Yilia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">诗词</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生活</a>
               </li>
              
               <li class="article-tag-list-item">

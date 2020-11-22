@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://weixian13.github.io">
-  <title>Tag: 记录 | WX&#39;s Tune</title>
+  <title>Micro服务启动 | WX&#39;s Tune</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="WX&#39;s Tune">
-<meta property="og:url" content="https://weixian13.github.io/tags/记录/index.html">
+  <meta name="description" content="环境MacOS 11.0.1 go v1.14 Micro v2 gPRC v1.26.0启动consul命令(默认地址127.0.0.1:8500)consul agent -dev -clientservice服务命令(会在当前目录开始创建,我使用的为GOPATH目录)micro new --type service --namespace user.srv src/workspace/scp">
+<meta name="keywords" content="学习,分享,记录,golang,微服务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Micro服务启动">
+<meta property="og:url" content="https://weixian13.github.io/2020/11/22/Micro服务启动/index.html">
 <meta property="og:site_name" content="WX&#39;s Tune">
+<meta property="og:description" content="环境MacOS 11.0.1 go v1.14 Micro v2 gPRC v1.26.0启动consul命令(默认地址127.0.0.1:8500)consul agent -dev -clientservice服务命令(会在当前目录开始创建,我使用的为GOPATH目录)micro new --type service --namespace user.srv src/workspace/scp">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-11-22T02:17:35.136Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WX&#39;s Tune">
+<meta name="twitter:title" content="Micro服务启动">
+<meta name="twitter:description" content="环境MacOS 11.0.1 go v1.14 Micro v2 gPRC v1.26.0启动consul命令(默认地址127.0.0.1:8500)consul agent -dev -clientservice服务命令(会在当前目录开始创建,我使用的为GOPATH目录)micro new --type service --namespace user.srv src/workspace/scp">
   
     <link rel="alternative" href="/atom.xml" title="WX&#39;s Tune" type="application/atom+xml">
   
@@ -147,36 +152,164 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Micro服务启动" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Micro服务启动
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/22/Micro服务启动/" class="archive-article-date">
+
+        
+        <a href="/2020/11/22/Micro服务启动/" class="archive-article-date">
   	<time datetime="2020-11-22T01:01:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/22/Micro服务启动/">Micro服务启动</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
+
+
+
+<!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+           
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div align="center">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;
+
+        <span class="post-meta-item-text"><a>   字数统计: </span>
+        <span class="post-count">653字</a></span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fas fa-book"></i>
+        <span class="post-meta-item-text"><a>  阅读时长:</span>
+        <span class="post-count">3分钟</a></span></div>
+</a>
+      </span>
+    </span>
+</div>
           
+        <!-- 添加完成 -->
+
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><pre><code>MacOS 11.0.1
+go v1.14
+Micro v2
+gPRC v1.26.0</code></pre><h1 id="启动consul"><a href="#启动consul" class="headerlink" title="启动consul"></a>启动consul</h1><h2 id="命令-默认地址127-0-0-1-8500"><a href="#命令-默认地址127-0-0-1-8500" class="headerlink" title="命令(默认地址127.0.0.1:8500)"></a>命令(默认地址127.0.0.1:8500)</h2><pre><code>consul agent -dev -client</code></pre><h1 id="service服务"><a href="#service服务" class="headerlink" title="service服务"></a>service服务</h1><h2 id="命令-会在当前目录开始创建-我使用的为GOPATH目录"><a href="#命令-会在当前目录开始创建-我使用的为GOPATH目录" class="headerlink" title="命令(会在当前目录开始创建,我使用的为GOPATH目录)"></a>命令(会在当前目录开始创建,我使用的为GOPATH目录)</h2><pre><code>micro new --type service --namespace user.srv src/workspace/scpro/user</code></pre><h2 id="编译proto文件"><a href="#编译proto文件" class="headerlink" title="编译proto文件"></a>编译proto文件</h2><pre><code>cd rc/workspace/scpro/user
+make proto</code></pre><h2 id="查看go-mod所需文件"><a href="#查看go-mod所需文件" class="headerlink" title="查看go mod所需文件"></a>查看go mod所需文件</h2><pre><code>go mod why 
+go mod tidy 
+go mod verify
+go mod graph</code></pre><br>
+
+<p>输出结果：</p>
+<pre><code>src/workspace/scpro/user
+src/workspace/scpro/user</code></pre><h2 id="修改main-go"><a href="#修改main-go" class="headerlink" title="修改main.go"></a>修改main.go</h2><p>添加consul支持的包</p>
+<pre><code>&quot;github.com/micro/go-micro/v2/registry&quot;
+&quot;github.com/micro/go-plugins/registry/consul/v2&quot;</code></pre><p>func main的修改</p>
+<pre><code>    // 新建consul注册器
+consulReg := consul.NewRegistry(
+    // 注册的consul信息
+    registry.Addrs(&quot;127.0.0.1:8500&quot;),
+)
+// New Service
+service := micro.NewService(
+    // 服务名称
+    micro.Name(&quot;user.srv.service.user&quot;),
+    // 服务版本
+    micro.Version(&quot;latest&quot;),
+    // 服务添加consul支持
+    micro.Registry(consulReg),
+)</code></pre><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><pre><code>go mod tidy
+go run main.go</code></pre><h1 id="web服务"><a href="#web服务" class="headerlink" title="web服务"></a>web服务</h1><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><pre><code>micro new --type web --namespace sc.web src/workspace/scpro/web</code></pre><h2 id="查看go-mod所需文件-1"><a href="#查看go-mod所需文件-1" class="headerlink" title="查看go mod所需文件"></a>查看go mod所需文件</h2><pre><code>go mod why 
+go mod tidy 
+go mod verify
+go mod graph</code></pre><br>
+
+<p>输出结果：</p>
+<pre><code>src/workspace/scpro/user
+src/workspace/scpro/user</code></pre><p>## </p>
+<h2 id="修改main-go-1"><a href="#修改main-go-1" class="headerlink" title="修改main.go"></a>修改main.go</h2><p>添加consul支持的包</p>
+<pre><code>&quot;github.com/micro/go-micro/v2/registry&quot;
+&quot;github.com/micro/go-plugins/registry/consul/v2&quot;</code></pre><p>func main的修改</p>
+<pre><code>// 新建consul注册器
+consulReg := consul.NewRegistry(
+        // 注册的consul信息
+        registry.Addrs(&quot;127.0.0.1:8500&quot;),
+)
+// create new web service
+// 新建web服务
+service := web.NewService(
+        // 服务名称
+        web.Name(&quot;scpro.web&quot;),
+        // 服务版本
+        web.Version(&quot;latest&quot;),
+        // 服务添加consul支持
+        web.Registry(consulReg),
+        // web服务监听的ip和port
+        web.Address(&quot;127.0.0.1:8080&quot;),
+)</code></pre><h2 id="修改handler-go"><a href="#修改handler-go" class="headerlink" title="修改handler.go"></a>修改handler.go</h2><h3 id="导入gRPC包"><a href="#导入gRPC包" class="headerlink" title="导入gRPC包"></a>导入gRPC包</h3><pre><code>&quot;github.com/micro/go-micro/v2/service/grpc&quot;</code></pre><p><font color="red" size="5">重点！</font><br>将 </p>
+<pre><code>web &quot;path/to/service/web&quot;</code></pre><p>修改为 service服务端的proto包<br>因为web没有proto文件，且当前目录指向为GOROOT目录,而非GOPATH目录<br>因此，我将user/proto/user这个目录复制到了path路径下。<br>因而完整路径为 /usr/local/go/src/path/proto/user。<br>修改后应为 </p>
+<pre><code>web &quot;path/proto/user&quot;</code></pre><br>
+大功告成！！
+应为这个点我整个文件改了3天，这个坑略大，网上也没有类似的情况，我一直以为是gomod文件出现的问题，来来回回修改了也快上百次了。
+成功解决问题后也长舒一口气，后面仔细看看发现这个问题有点低级，居然困扰了我3天，也只能怪自己对流程不够熟悉吧。
+
+<h3 id="WebCall函数的修改"><a href="#WebCall函数的修改" class="headerlink" title="WebCall函数的修改"></a>WebCall函数的修改</h3><pre><code> // 使用grpc创建客户端服务
+cli := grpc.NewService()
+// 客户端服务初始化
+cli.Init()
+
+// 基于后端服务scpro.user创建web客户端
+// NewUserService要和user/proto/user/user.pb.micro.go的NewUserService方法名一致
+
+webClient := web.NewUserService(&quot;scpro.web&quot;, cli.Client())</code></pre><h2 id="启动-1"><a href="#启动-1" class="headerlink" title="启动"></a>启动</h2><pre><code>go mod tidy
+go run main.go</code></pre>
+      
+
+
+
+
+  <div class="declare">
+    <strong>本文作者：</strong>
+    
+      风与牧歌
+    
+    <br>
+    <strong>本文链接：</strong>
+    https://weixian13.github.io/2020/11/22/Micro服务启动/
+    <br>
+    <strong>版权声明：</strong>
+    <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"></a>
+    转载请注明出处！
+    
+  </div>
+
+
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -204,509 +337,146 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://weixian13.github.io/2020/11/22/Micro服务启动/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/21/micro微服务的启动/" class="archive-article-date">
-  	<time datetime="2020-11-21T06:19:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-21</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/11/21/micro微服务的启动/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">micro微服务的启动</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/21/micro微服务的启动/">micro微服务的启动</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#环境"><span class="toc-number">1.</span> <span class="toc-text">环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#启动consul"><span class="toc-number">2.</span> <span class="toc-text">启动consul</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令-默认地址127-0-0-1-8500"><span class="toc-number">2.1.</span> <span class="toc-text">命令(默认地址127.0.0.1:8500)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#service服务"><span class="toc-number">3.</span> <span class="toc-text">service服务</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令-会在当前目录开始创建-我使用的为GOPATH目录"><span class="toc-number">3.1.</span> <span class="toc-text">命令(会在当前目录开始创建,我使用的为GOPATH目录)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编译proto文件"><span class="toc-number">3.2.</span> <span class="toc-text">编译proto文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看go-mod所需文件"><span class="toc-number">3.3.</span> <span class="toc-text">查看go mod所需文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改main-go"><span class="toc-number">3.4.</span> <span class="toc-text">修改main.go</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动"><span class="toc-number">3.5.</span> <span class="toc-text">启动</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#web服务"><span class="toc-number">4.</span> <span class="toc-text">web服务</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令"><span class="toc-number">4.1.</span> <span class="toc-text">命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看go-mod所需文件-1"><span class="toc-number">4.2.</span> <span class="toc-text">查看go mod所需文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改main-go-1"><span class="toc-number">4.3.</span> <span class="toc-text">修改main.go</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改handler-go"><span class="toc-number">4.4.</span> <span class="toc-text">修改handler.go</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#导入gRPC包"><span class="toc-number">4.4.1.</span> <span class="toc-text">导入gRPC包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WebCall函数的修改"><span class="toc-number">4.4.2.</span> <span class="toc-text">WebCall函数的修改</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动-1"><span class="toc-number">4.5.</span> <span class="toc-text">启动</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/19/Redis的安装和使用/" class="archive-article-date">
-  	<time datetime="2020-11-19T01:24:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-19</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/19/Redis的安装和使用/">Redis的安装和使用</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Reddis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/16/安装Micro环境/" class="archive-article-date">
-  	<time datetime="2020-11-16T08:22:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/16/安装Micro环境/">安装Micro环境</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/02/Go-sync包/" class="archive-article-date">
-  	<time datetime="2020-11-01T23:58:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/02/Go-sync包/">Go-sync包</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/01/Go-并发实现/" class="archive-article-date">
-  	<time datetime="2020-11-01T01:38:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/01/Go-并发实现/">Go-并发实现</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/30/Go-time库&日志/" class="archive-article-date">
-  	<time datetime="2020-10-30T09:39:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/30/Go-time库&日志/">Go-time库&amp;日志</a>
-    </h1>
-  
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'true' == true ? true : false;
+   var verify = 'true' == true ? true : false;
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "jmu3qtnrdhAcp3jGbByxL8lv-gzGzoHsz",
+            app_key: "eFYFjSI0M7BG848I6s5me5ij",
+            placeholder: "Just go go",
+            avatar:"mm"
+        });
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/30/Go-接口/" class="archive-article-date">
-  	<time datetime="2020-10-30T06:20:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/30/Go-接口/">Go-接口</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/29/Go-结构体/" class="archive-article-date">
-  	<time datetime="2020-10-29T01:25:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/29/Go-结构体/">Go-结构体</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/29/Go-基本语法/" class="archive-article-date">
-  	<time datetime="2020-10-29T01:23:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/29/Go-基本语法/">Go-基本语法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/tags/记录/page/2/">2</a><a class="extend next" rel="next" href="/tags/记录/page/2/">Next &raquo;</a>
-    </nav>
-  
+</script>
+  </section>
 
 
           </div>
@@ -750,9 +520,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
