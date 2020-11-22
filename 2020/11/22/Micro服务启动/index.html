@@ -9,7 +9,7 @@
   <title>Micro服务启动 | WX&#39;s Tune</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="环境MacOS 11.0.1 go v1.14 Micro v2 gPRC v1.26.0">
-<meta name="keywords" content="学习,分享,记录,golang,微服务">
+<meta name="keywords" content="分享,学习,记录,golang,微服务">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Micro服务启动">
 <meta property="og:url" content="https://weixian13.github.io/2020/11/22/Micro服务启动/index.html">
@@ -17,7 +17,7 @@
 <meta property="og:description" content="环境MacOS 11.0.1 go v1.14 Micro v2 gPRC v1.26.0">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://raw.githubusercontent.com/Weixian13/img_hexo/main/16.png">
-<meta property="og:updated_time" content="2020-11-22T02:39:35.601Z">
+<meta property="og:updated_time" content="2020-11-22T02:46:01.712Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Micro服务启动">
 <meta name="twitter:description" content="环境MacOS 11.0.1 go v1.14 Micro v2 gPRC v1.26.0">
@@ -189,7 +189,7 @@
 &nbsp;
 
         <span class="post-meta-item-text"><a>   字数统计: </span>
-        <span class="post-count">666字</a></span>
+        <span class="post-count">635字</a></span>
       </span>
     </span>
 
@@ -198,7 +198,7 @@
       <span class="post-meta-item-icon">
         <i class="fas fa-book"></i>
         <span class="post-meta-item-text"><a>  阅读时长:</span>
-        <span class="post-count">3分钟</a></span></div>
+        <span class="post-count">2分钟</a></span></div>
 </a>
       </span>
     </span>
@@ -223,7 +223,7 @@ go mod verify
 go mod graph</code></pre><br>
 
 <p>输出结果：</p>
-<pre><code>src/workspace/scpro/user
+<pre><code>#src/workspace/scpro/user
 src/workspace/scpro/user</code></pre><h2 id="修改main-go"><a href="#修改main-go" class="headerlink" title="修改main.go"></a>修改main.go</h2><p>添加consul支持的包</p>
 <pre><code>&quot;github.com/micro/go-micro/v2/registry&quot;
 &quot;github.com/micro/go-plugins/registry/consul/v2&quot;</code></pre><p>func main的修改</p>
@@ -241,18 +241,8 @@ service := micro.NewService(
     // 服务添加consul支持
     micro.Registry(consulReg),
 )</code></pre><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><pre><code>go mod tidy
-go run main.go</code></pre><h1 id="web服务"><a href="#web服务" class="headerlink" title="web服务"></a>web服务</h1><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><pre><code>micro new --type web --namespace sc.web src/workspace/scpro/web</code></pre><h2 id="查看go-mod所需文件-1"><a href="#查看go-mod所需文件-1" class="headerlink" title="查看go mod所需文件"></a>查看go mod所需文件</h2><pre><code>go mod why 
-go mod tidy 
-go mod verify
-go mod graph</code></pre><br>
-
-<p>输出结果：</p>
-<pre><code>src/workspace/scpro/user
-src/workspace/scpro/user</code></pre><p>## </p>
-<h2 id="修改main-go-1"><a href="#修改main-go-1" class="headerlink" title="修改main.go"></a>修改main.go</h2><p>添加consul支持的包</p>
-<pre><code>&quot;github.com/micro/go-micro/v2/registry&quot;
-&quot;github.com/micro/go-plugins/registry/consul/v2&quot;</code></pre><p>func main的修改</p>
-<pre><code>// 新建consul注册器
+go run main.go</code></pre><h1 id="web服务"><a href="#web服务" class="headerlink" title="web服务"></a>web服务</h1><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><pre><code>micro new --type web --namespace sc.web src/workspace/scpro/web</code></pre><h2 id="修改main-go-1"><a href="#修改main-go-1" class="headerlink" title="修改main.go"></a>修改main.go</h2><h3 id="添加consul支持的包"><a href="#添加consul支持的包" class="headerlink" title="添加consul支持的包"></a>添加consul支持的包</h3><pre><code>&quot;github.com/micro/go-micro/v2/registry&quot;
+&quot;github.com/micro/go-plugins/registry/consul/v2&quot;</code></pre><h3 id="func-main的修改"><a href="#func-main的修改" class="headerlink" title="func main的修改"></a>func main的修改</h3><pre><code>// 新建consul注册器
 consulReg := consul.NewRegistry(
         // 注册的consul信息
         registry.Addrs(&quot;127.0.0.1:8500&quot;),
@@ -315,11 +305,11 @@ go run main.go</code></pre><h2 id="web成功访问"><a href="#web成功访问" c
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -430,7 +420,7 @@ go run main.go</code></pre><h2 id="web成功访问"><a href="#web成功访问" c
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#环境"><span class="toc-number">1.</span> <span class="toc-text">环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#启动consul"><span class="toc-number">2.</span> <span class="toc-text">启动consul</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令-默认地址127-0-0-1-8500"><span class="toc-number">2.1.</span> <span class="toc-text">命令(默认地址127.0.0.1:8500)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#service服务"><span class="toc-number">3.</span> <span class="toc-text">service服务</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令-会在当前目录开始创建-我使用的为GOPATH目录"><span class="toc-number">3.1.</span> <span class="toc-text">命令(会在当前目录开始创建,我使用的为GOPATH目录)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编译proto文件"><span class="toc-number">3.2.</span> <span class="toc-text">编译proto文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看go-mod所需文件"><span class="toc-number">3.3.</span> <span class="toc-text">查看go mod所需文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改main-go"><span class="toc-number">3.4.</span> <span class="toc-text">修改main.go</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动"><span class="toc-number">3.5.</span> <span class="toc-text">启动</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#web服务"><span class="toc-number">4.</span> <span class="toc-text">web服务</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令"><span class="toc-number">4.1.</span> <span class="toc-text">命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看go-mod所需文件-1"><span class="toc-number">4.2.</span> <span class="toc-text">查看go mod所需文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改main-go-1"><span class="toc-number">4.3.</span> <span class="toc-text">修改main.go</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改handler-go"><span class="toc-number">4.4.</span> <span class="toc-text">修改handler.go</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#导入gRPC包"><span class="toc-number">4.4.1.</span> <span class="toc-text">导入gRPC包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WebCall函数的修改"><span class="toc-number">4.4.2.</span> <span class="toc-text">WebCall函数的修改</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动-1"><span class="toc-number">4.5.</span> <span class="toc-text">启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web成功访问"><span class="toc-number">4.6.</span> <span class="toc-text">web成功访问</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#环境"><span class="toc-number">1.</span> <span class="toc-text">环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#启动consul"><span class="toc-number">2.</span> <span class="toc-text">启动consul</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令-默认地址127-0-0-1-8500"><span class="toc-number">2.1.</span> <span class="toc-text">命令(默认地址127.0.0.1:8500)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#service服务"><span class="toc-number">3.</span> <span class="toc-text">service服务</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令-会在当前目录开始创建-我使用的为GOPATH目录"><span class="toc-number">3.1.</span> <span class="toc-text">命令(会在当前目录开始创建,我使用的为GOPATH目录)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编译proto文件"><span class="toc-number">3.2.</span> <span class="toc-text">编译proto文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看go-mod所需文件"><span class="toc-number">3.3.</span> <span class="toc-text">查看go mod所需文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改main-go"><span class="toc-number">3.4.</span> <span class="toc-text">修改main.go</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动"><span class="toc-number">3.5.</span> <span class="toc-text">启动</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#web服务"><span class="toc-number">4.</span> <span class="toc-text">web服务</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令"><span class="toc-number">4.1.</span> <span class="toc-text">命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改main-go-1"><span class="toc-number">4.2.</span> <span class="toc-text">修改main.go</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#添加consul支持的包"><span class="toc-number">4.2.1.</span> <span class="toc-text">添加consul支持的包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#func-main的修改"><span class="toc-number">4.2.2.</span> <span class="toc-text">func main的修改</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改handler-go"><span class="toc-number">4.3.</span> <span class="toc-text">修改handler.go</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#导入gRPC包"><span class="toc-number">4.3.1.</span> <span class="toc-text">导入gRPC包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WebCall函数的修改"><span class="toc-number">4.3.2.</span> <span class="toc-text">WebCall函数的修改</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动-1"><span class="toc-number">4.4.</span> <span class="toc-text">启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web成功访问"><span class="toc-number">4.5.</span> <span class="toc-text">web成功访问</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -604,23 +594,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">题目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Numpy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">分享</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -645,6 +623,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Reddis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -676,7 +658,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Reddis</a>
+                <a href="javascript:void(0)" class="js-tag color3">题目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Numpy</a>
               </li>
             
             <div class="clearfix"></div>
