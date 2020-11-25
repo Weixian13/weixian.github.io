@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="WX&#39;s Tune">
 <meta property="og:description" content="主要梳理记录一下大致流程，方便后续查看">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-11-23T05:49:17.241Z">
+<meta property="og:updated_time" content="2020-11-25T00:22:35.918Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="商场项目流程记录">
 <meta name="twitter:description" content="主要梳理记录一下大致流程，方便后续查看">
@@ -187,7 +187,7 @@
 &nbsp;
 
         <span class="post-meta-item-text"><a>   字数统计: </span>
-        <span class="post-count">111字</a></span>
+        <span class="post-count">271字</a></span>
       </span>
     </span>
 
@@ -211,8 +211,20 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="主要梳理记录一下大致流程，方便后续查看"><a href="#主要梳理记录一下大致流程，方便后续查看" class="headerlink" title="主要梳理记录一下大致流程，方便后续查看"></a>主要梳理记录一下大致流程，方便后续查看</h1><a id="more"></a>
-<h1 id="创建web服务"><a href="#创建web服务" class="headerlink" title="创建web服务"></a>创建web服务</h1><h1 id="创建service服务"><a href="#创建service服务" class="headerlink" title="创建service服务"></a>创建service服务</h1><h1 id="连通web与service服务"><a href="#连通web与service服务" class="headerlink" title="连通web与service服务"></a>连通web与service服务</h1><h1 id="整合gin框架"><a href="#整合gin框架" class="headerlink" title="整合gin框架"></a>整合gin框架</h1><h1 id="调整项目结果（web服务）"><a href="#调整项目结果（web服务）" class="headerlink" title="调整项目结果（web服务）"></a>调整项目结果（web服务）</h1><h2 id="创建总路由"><a href="#创建总路由" class="headerlink" title="创建总路由"></a>创建总路由</h2><h2 id="为各个service创建分路由"><a href="#为各个service创建分路由" class="headerlink" title="为各个service创建分路由"></a>为各个service创建分路由</h2><h1 id="创建模型"><a href="#创建模型" class="headerlink" title="创建模型"></a>创建模型</h1><h2 id="user的数据库模型创建"><a href="#user的数据库模型创建" class="headerlink" title="user的数据库模型创建"></a>user的数据库模型创建</h2><h2 id="绑定表名"><a href="#绑定表名" class="headerlink" title="绑定表名"></a>绑定表名</h2><p>#gorm配置数据库连接</p>
-<h2 id="数据库配置文件json"><a href="#数据库配置文件json" class="headerlink" title="数据库配置文件json"></a>数据库配置文件json</h2><h2 id="日志配置文件json"><a href="#日志配置文件json" class="headerlink" title="日志配置文件json"></a>日志配置文件json</h2><h2 id="数据库加载配置文件go"><a href="#数据库加载配置文件go" class="headerlink" title="数据库加载配置文件go"></a>数据库加载配置文件go</h2><h2 id="数据库连接go"><a href="#数据库连接go" class="headerlink" title="数据库连接go"></a>数据库连接go</h2>
+<h1 id="创建web服务"><a href="#创建web服务" class="headerlink" title="创建web服务"></a>创建web服务</h1><h1 id="创建service服务"><a href="#创建service服务" class="headerlink" title="创建service服务"></a>创建service服务</h1><h1 id="连通web与service服务"><a href="#连通web与service服务" class="headerlink" title="连通web与service服务"></a>连通web与service服务</h1><h1 id="整合gin框架"><a href="#整合gin框架" class="headerlink" title="整合gin框架"></a>整合gin框架</h1><h1 id="调整项目结果（web服务）"><a href="#调整项目结果（web服务）" class="headerlink" title="调整项目结果（web服务）"></a>调整项目结果（web服务）</h1><h2 id="创建总路由"><a href="#创建总路由" class="headerlink" title="创建总路由"></a>创建总路由</h2><h2 id="为各个service创建分路由"><a href="#为各个service创建分路由" class="headerlink" title="为各个service创建分路由"></a>为各个service创建分路由</h2><h1 id="创建模型"><a href="#创建模型" class="headerlink" title="创建模型"></a>创建模型</h1><h2 id="user的数据库模型创建"><a href="#user的数据库模型创建" class="headerlink" title="user的数据库模型创建"></a>user的数据库模型创建</h2><h2 id="绑定表名"><a href="#绑定表名" class="headerlink" title="绑定表名"></a>绑定表名</h2><h1 id="gorm配置数据库连接"><a href="#gorm配置数据库连接" class="headerlink" title="gorm配置数据库连接"></a>gorm配置数据库连接</h1><h2 id="数据库配置文件json"><a href="#数据库配置文件json" class="headerlink" title="数据库配置文件json"></a>数据库配置文件json</h2><h2 id="日志配置文件json"><a href="#日志配置文件json" class="headerlink" title="日志配置文件json"></a>日志配置文件json</h2><h2 id="数据库加载配置文件go"><a href="#数据库加载配置文件go" class="headerlink" title="数据库加载配置文件go"></a>数据库加载配置文件go</h2><h2 id="数据库连接go"><a href="#数据库连接go" class="headerlink" title="数据库连接go"></a>数据库连接go</h2><h1 id="前后端的通信"><a href="#前后端的通信" class="headerlink" title="前后端的通信"></a>前后端的通信</h1><h2 id="gRPC通信"><a href="#gRPC通信" class="headerlink" title="gRPC通信"></a>gRPC通信</h2><h2 id="proto文件创建"><a href="#proto文件创建" class="headerlink" title="proto文件创建"></a>proto文件创建</h2><h3 id="sevice"><a href="#sevice" class="headerlink" title="sevice"></a>sevice</h3><pre><code>service FrontUser{
+    rpc FrontUserRegister(FrontUserRequest) returns (FrontUserResponse){}
+}</code></pre><h3 id="message"><a href="#message" class="headerlink" title="message"></a>message</h3><pre><code>message FrontUserRequest{
+  string email = 1;
+  string code = 2;
+  string password = 3;
+  string repassword = 4;
+}
+
+message FrontUserResponse{
+  int32 code = 1;
+  string msg = 2;
+}</code></pre><h2 id="proto文件编译"><a href="#proto文件编译" class="headerlink" title="proto文件编译"></a>proto文件编译</h2><pre><code>protoc --proto_path=. --micro_out=Mproto/imports/api.proto=github.com/micro/go-micro/v2/api/proto:. --go_out=Mproto/imports/api.proto=github.com/micro/go-micro/v2/api/proto:. proto/[file_name]</code></pre><h2 id="重写pb-micro-go下的rpc接口"><a href="#重写pb-micro-go下的rpc接口" class="headerlink" title="重写pb.micro.go下的rpc接口"></a>重写pb.micro.go下的rpc接口</h2><h3 id="例：FrontUserRegister-ctx-context-Context-in-FrontUserRequest-out-FrontUserResponse-error"><a href="#例：FrontUserRegister-ctx-context-Context-in-FrontUserRequest-out-FrontUserResponse-error" class="headerlink" title="例：FrontUserRegister(ctx context.Context, in *FrontUserRequest, out *FrontUserResponse) error{"></a>例：FrontUserRegister(ctx context.Context, in *FrontUserRequest, out *FrontUserResponse) error{</h3><pre><code>return nil</code></pre><p>}</p>
+<h3 id="在controller文件下重写函数"><a href="#在controller文件下重写函数" class="headerlink" title="在controller文件下重写函数"></a>在controller文件下重写函数</h3><h3 id="引入数据库保存数据"><a href="#引入数据库保存数据" class="headerlink" title="引入数据库保存数据"></a>引入数据库保存数据</h3><h1 id="vue项目的创建"><a href="#vue项目的创建" class="headerlink" title="vue项目的创建"></a>vue项目的创建</h1><h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><pre><code>vue create [name]</code></pre><h2 id="使用vue-router路由管理"><a href="#使用vue-router路由管理" class="headerlink" title="使用vue-router路由管理"></a>使用vue-router路由管理</h2><pre><code>npm install vue-router@4.0.0-alpha.6 --save</code></pre><h2 id="创建router-js文件"><a href="#创建router-js文件" class="headerlink" title="创建router.js文件"></a>创建router.js文件</h2><h2 id="创建home组件"><a href="#创建home组件" class="headerlink" title="创建home组件"></a>创建home组件</h2><h2 id="将router-js指向home组件"><a href="#将router-js指向home组件" class="headerlink" title="将router.js指向home组件"></a>将router.js指向home组件</h2><h2 id="在main-js中引入router-js"><a href="#在main-js中引入router-js" class="headerlink" title="在main.js中引入router.js"></a>在main.js中引入router.js</h2>
       
 
 
@@ -349,7 +361,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#主要梳理记录一下大致流程，方便后续查看"><span class="toc-number">1.</span> <span class="toc-text">主要梳理记录一下大致流程，方便后续查看</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建web服务"><span class="toc-number">2.</span> <span class="toc-text">创建web服务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建service服务"><span class="toc-number">3.</span> <span class="toc-text">创建service服务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#连通web与service服务"><span class="toc-number">4.</span> <span class="toc-text">连通web与service服务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#整合gin框架"><span class="toc-number">5.</span> <span class="toc-text">整合gin框架</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#调整项目结果（web服务）"><span class="toc-number">6.</span> <span class="toc-text">调整项目结果（web服务）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建总路由"><span class="toc-number">6.1.</span> <span class="toc-text">创建总路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为各个service创建分路由"><span class="toc-number">6.2.</span> <span class="toc-text">为各个service创建分路由</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建模型"><span class="toc-number">7.</span> <span class="toc-text">创建模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#user的数据库模型创建"><span class="toc-number">7.1.</span> <span class="toc-text">user的数据库模型创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#绑定表名"><span class="toc-number">7.2.</span> <span class="toc-text">绑定表名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库配置文件json"><span class="toc-number">7.3.</span> <span class="toc-text">数据库配置文件json</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#日志配置文件json"><span class="toc-number">7.4.</span> <span class="toc-text">日志配置文件json</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库加载配置文件go"><span class="toc-number">7.5.</span> <span class="toc-text">数据库加载配置文件go</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库连接go"><span class="toc-number">7.6.</span> <span class="toc-text">数据库连接go</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#主要梳理记录一下大致流程，方便后续查看"><span class="toc-number">1.</span> <span class="toc-text">主要梳理记录一下大致流程，方便后续查看</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建web服务"><span class="toc-number">2.</span> <span class="toc-text">创建web服务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建service服务"><span class="toc-number">3.</span> <span class="toc-text">创建service服务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#连通web与service服务"><span class="toc-number">4.</span> <span class="toc-text">连通web与service服务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#整合gin框架"><span class="toc-number">5.</span> <span class="toc-text">整合gin框架</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#调整项目结果（web服务）"><span class="toc-number">6.</span> <span class="toc-text">调整项目结果（web服务）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建总路由"><span class="toc-number">6.1.</span> <span class="toc-text">创建总路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为各个service创建分路由"><span class="toc-number">6.2.</span> <span class="toc-text">为各个service创建分路由</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建模型"><span class="toc-number">7.</span> <span class="toc-text">创建模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#user的数据库模型创建"><span class="toc-number">7.1.</span> <span class="toc-text">user的数据库模型创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#绑定表名"><span class="toc-number">7.2.</span> <span class="toc-text">绑定表名</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#gorm配置数据库连接"><span class="toc-number">8.</span> <span class="toc-text">gorm配置数据库连接</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库配置文件json"><span class="toc-number">8.1.</span> <span class="toc-text">数据库配置文件json</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#日志配置文件json"><span class="toc-number">8.2.</span> <span class="toc-text">日志配置文件json</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库加载配置文件go"><span class="toc-number">8.3.</span> <span class="toc-text">数据库加载配置文件go</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库连接go"><span class="toc-number">8.4.</span> <span class="toc-text">数据库连接go</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#前后端的通信"><span class="toc-number">9.</span> <span class="toc-text">前后端的通信</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#gRPC通信"><span class="toc-number">9.1.</span> <span class="toc-text">gRPC通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#proto文件创建"><span class="toc-number">9.2.</span> <span class="toc-text">proto文件创建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sevice"><span class="toc-number">9.2.1.</span> <span class="toc-text">sevice</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#message"><span class="toc-number">9.2.2.</span> <span class="toc-text">message</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#proto文件编译"><span class="toc-number">9.3.</span> <span class="toc-text">proto文件编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重写pb-micro-go下的rpc接口"><span class="toc-number">9.4.</span> <span class="toc-text">重写pb.micro.go下的rpc接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#例：FrontUserRegister-ctx-context-Context-in-FrontUserRequest-out-FrontUserResponse-error"><span class="toc-number">9.4.1.</span> <span class="toc-text">例：FrontUserRegister(ctx context.Context, in *FrontUserRequest, out *FrontUserResponse) error{</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在controller文件下重写函数"><span class="toc-number">9.4.2.</span> <span class="toc-text">在controller文件下重写函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引入数据库保存数据"><span class="toc-number">9.4.3.</span> <span class="toc-text">引入数据库保存数据</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vue项目的创建"><span class="toc-number">10.</span> <span class="toc-text">vue项目的创建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建项目"><span class="toc-number">10.1.</span> <span class="toc-text">创建项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用vue-router路由管理"><span class="toc-number">10.2.</span> <span class="toc-text">使用vue-router路由管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建router-js文件"><span class="toc-number">10.3.</span> <span class="toc-text">创建router.js文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建home组件"><span class="toc-number">10.4.</span> <span class="toc-text">创建home组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将router-js指向home组件"><span class="toc-number">10.5.</span> <span class="toc-text">将router.js指向home组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在main-js中引入router-js"><span class="toc-number">10.6.</span> <span class="toc-text">在main.js中引入router.js</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -527,6 +539,22 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">TODO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">题目</a>
               </li>
              
@@ -540,10 +568,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">分享</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -568,10 +592,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Reddis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">TODO</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -600,14 +620,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">个人</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Github</a>
               </li>
             
             <div class="clearfix"></div>
