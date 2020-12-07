@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://weixian13.github.io">
-  <title>Tag: golang | WX&#39;s Tune</title>
+  <title>跨语言跨服务器通信 | WX&#39;s Tune</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="WX&#39;s Tune">
-<meta property="og:url" content="https://weixian13.github.io/tags/golang/index.html">
+  <meta name="description" content="1.环境安装1.Python123pip3 install grpciopip3 install protobufpip3 install grpcio-tools  2.proto的编译1.Python1python3 -m grpc_tools.protoc --python_out=. --grpc_python_out=. -I.  [PATH/NAME]  2.GolanggRPC1">
+<meta name="keywords" content="gRPC,protobuf,go,python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跨语言跨服务器通信">
+<meta property="og:url" content="https://weixian13.github.io/2020/12/02/跨语言跨服务器通信/index.html">
 <meta property="og:site_name" content="WX&#39;s Tune">
+<meta property="og:description" content="1.环境安装1.Python123pip3 install grpciopip3 install protobufpip3 install grpcio-tools  2.proto的编译1.Python1python3 -m grpc_tools.protoc --python_out=. --grpc_python_out=. -I.  [PATH/NAME]  2.GolanggRPC1">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://raw.githubusercontent.com/Weixian13/img_hexo/main/17.png">
+<meta property="og:updated_time" content="2020-12-07T01:55:38.538Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WX&#39;s Tune">
+<meta name="twitter:title" content="跨语言跨服务器通信">
+<meta name="twitter:description" content="1.环境安装1.Python123pip3 install grpciopip3 install protobufpip3 install grpcio-tools  2.proto的编译1.Python1python3 -m grpc_tools.protoc --python_out=. --grpc_python_out=. -I.  [PATH/NAME]  2.GolanggRPC1">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Weixian13/img_hexo/main/17.png">
   
     <link rel="alternative" href="/atom.xml" title="WX&#39;s Tune" type="application/atom+xml">
   
@@ -147,566 +154,301 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-跨语言跨服务器通信" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      跨语言跨服务器通信
+    </h1>
+  
+
+        
+        <a href="/2020/12/02/跨语言跨服务器通信/" class="archive-article-date">
+  	<time datetime="2020-12-02T04:01:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-02</time>
+</a>
+
+
+
+
+<!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+           
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div align="center">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;
+
+        <span class="post-meta-item-text"><a>   字数统计: </span>
+        <span class="post-count">734字</a></span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fas fa-book"></i>
+        <span class="post-meta-item-text"><a>  阅读时长:</span>
+        <span class="post-count">3分钟</a></span></div>
+</a>
+      </span>
+    </span>
+</div>
+          
+        <!-- 添加完成 -->
+
+
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+
+<h1 id="1-环境安装"><a href="#1-环境安装" class="headerlink" title="1.环境安装"></a>1.环境安装</h1><h3 id="1-Python"><a href="#1-Python" class="headerlink" title="1.Python"></a>1.Python</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip3 install grpcio</span><br><span class="line">pip3 install protobuf</span><br><span class="line">pip3 install grpcio-tools</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-proto的编译"><a href="#2-proto的编译" class="headerlink" title="2.proto的编译"></a>2.proto的编译</h1><h3 id="1-Python-1"><a href="#1-Python-1" class="headerlink" title="1.Python"></a>1.Python</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m grpc_tools.protoc --python_out=. --grpc_python_out=. -I.  [PATH/NAME]</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-Golang"><a href="#2-Golang" class="headerlink" title="2.Golang"></a>2.Golang</h3><h5 id="gRPC"><a href="#gRPC" class="headerlink" title="gRPC"></a>gRPC</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protoc --go_out=plugins=grpc:. [PATH/NAME]</span><br></pre></td></tr></table></figure>
+
+<h5 id="micro"><a href="#micro" class="headerlink" title="micro"></a>micro</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protoc --proto_path=. --micro_out=Mproto/imports/api.proto=github.com/micro/<span class="keyword">go</span>-micro/v2/api/proto:. --go_out=Mproto/imports/api.proto=github.com/micro/<span class="keyword">go</span>-micro/v2/api/proto:. [PATH/NAME]</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-创建python-service端"><a href="#3-创建python-service端" class="headerlink" title="3.创建python service端"></a>3.创建python service端</h1><h3 id="1-创建protobuf文件"><a href="#1-创建protobuf文件" class="headerlink" title="1.创建protobuf文件"></a>1.创建protobuf文件</h3><h3 id="2-编译protobuf文件"><a href="#2-编译protobuf文件" class="headerlink" title="2.编译protobuf文件"></a>2.编译protobuf文件</h3><p>[TODO…………….]</p>
+<h1 id="4-创建go-service端"><a href="#4-创建go-service端" class="headerlink" title="4.创建go service端"></a>4.创建go service端</h1><h3 id="1-命令创建"><a href="#1-命令创建" class="headerlink" title="1.命令创建"></a>1.命令创建</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">micro <span class="built_in">new</span> --<span class="keyword">type</span> service --namespace user.srv src/workspace/web_test/userSrv</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-编译proto"><a href="#2-编译proto" class="headerlink" title="2.编译proto"></a>2.编译proto</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd userSrv</span><br><span class="line"><span class="built_in">make</span> proto</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-添加consul支持的包"><a href="#3-添加consul支持的包" class="headerlink" title="3.添加consul支持的包"></a>3.添加consul支持的包</h3><h5 id="修改main-go"><a href="#修改main-go" class="headerlink" title="修改main.go"></a>修改main.go</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"github.com/micro/go-micro/v2/registry"</span></span><br><span class="line"><span class="string">"github.com/micro/go-plugins/registry/consul/v2"</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 新建consul注册器</span></span><br><span class="line">consulReg := consul.NewRegistry(</span><br><span class="line">    <span class="comment">// 注册的consul信息</span></span><br><span class="line">    registry.Addrs(<span class="string">"127.0.0.1:8500"</span>),</span><br><span class="line">)</span><br><span class="line"><span class="comment">// New Service</span></span><br><span class="line">service := micro.NewService(</span><br><span class="line">    <span class="comment">// 服务名称</span></span><br><span class="line">    micro.Name(<span class="string">"AES.userSrv"</span>),</span><br><span class="line">    <span class="comment">// 服务版本</span></span><br><span class="line">    micro.Version(<span class="string">"latest"</span>),</span><br><span class="line">    <span class="comment">// 服务添加consul支持</span></span><br><span class="line">    micro.Registry(consulReg),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-创建go-web端"><a href="#5-创建go-web端" class="headerlink" title="5.创建go web端"></a>5.创建go web端</h1><h3 id="1-命令创建-1"><a href="#1-命令创建-1" class="headerlink" title="1.命令创建"></a>1.命令创建</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">micro <span class="built_in">new</span> --<span class="keyword">type</span> web --namespace sc.web src/workspace/web_test/web</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-添加consul支持的包"><a href="#2-添加consul支持的包" class="headerlink" title="2.添加consul支持的包"></a>2.添加consul支持的包</h3><h5 id="修改main-go-1"><a href="#修改main-go-1" class="headerlink" title="修改main.go"></a>修改main.go</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"github.com/micro/go-micro/v2/registry"</span></span><br><span class="line"><span class="string">"github.com/micro/go-plugins/registry/consul/v2"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 新建consul注册器</span></span><br><span class="line">consulReg := consul.NewRegistry(</span><br><span class="line">        <span class="comment">// 注册的consul信息</span></span><br><span class="line">        registry.Addrs(<span class="string">"127.0.0.1:8500"</span>),</span><br><span class="line">)</span><br><span class="line"><span class="comment">// create new web service</span></span><br><span class="line"><span class="comment">// 新建web服务</span></span><br><span class="line">service := web.NewService(</span><br><span class="line">        <span class="comment">// 服务名称</span></span><br><span class="line">        web.Name(<span class="string">"AES.web"</span>),</span><br><span class="line">        <span class="comment">// 服务版本</span></span><br><span class="line">        web.Version(<span class="string">"latest"</span>),</span><br><span class="line">        <span class="comment">// 服务添加consul支持</span></span><br><span class="line">        web.Registry(consulReg),</span><br><span class="line">        <span class="comment">// web服务监听的ip和port</span></span><br><span class="line">        web.Address(<span class="string">"127.0.0.1:8081"</span>),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-handler的初步设置"><a href="#3-handler的初步设置" class="headerlink" title="3.handler的初步设置"></a>3.handler的初步设置</h3><h5 id="导入gRPC包"><a href="#导入gRPC包" class="headerlink" title="导入gRPC包"></a>导入gRPC包</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"github.com/micro/go-micro/v2/service/grpc"</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="导入service端的proto包"><a href="#导入service端的proto包" class="headerlink" title="导入service端的proto包"></a>导入service端的proto包</h5><p>因为web没有proto文件，且当前目录指向为GOROOT目录,而非GOPATH目录<br>因此，我将user/proto/user这个目录复制到了path路径下。<br>因而完整路径为 /usr/local/go/src/path/proto/userSrv<br>后续相关服务端的proto文件可依此进行处理</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">userSrv <span class="string">"path/proto/userSrv"</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="WebCall函数的初步修改"><a href="#WebCall函数的初步修改" class="headerlink" title="WebCall函数的初步修改"></a>WebCall函数的初步修改</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用grpc创建客户端服务</span></span><br><span class="line">cli := grpc.NewService()</span><br><span class="line"><span class="comment">// 客户端服务初始化</span></span><br><span class="line">cli.Init()</span><br><span class="line"><span class="comment">// 基于后端服务 AES.userSrv 创建web客户端</span></span><br><span class="line"><span class="comment">// NewUserSrvService 要和 proto 文件下的 pb.micro.go 的 NewUserSrvService方法名一致</span></span><br><span class="line">webClient := userSrv.NewUserSrvService(<span class="string">"AES.userSrv"</span>, cli.Client())</span><br><span class="line"><span class="comment">// call the backend service</span></span><br><span class="line">rsp, err := webClient.Call(context.TODO(), &amp;userSrv.Request&#123;</span><br><span class="line">	Name: request[<span class="string">"name"</span>].(<span class="keyword">string</span>),</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">	http.Error(w, err.Error(), <span class="number">500</span>)</span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="6-consul单点测试"><a href="#6-consul单点测试" class="headerlink" title="6.consul单点测试"></a>6.consul单点测试</h1><h5 id="consul服务启动"><a href="#consul服务启动" class="headerlink" title="consul服务启动"></a>consul服务启动</h5><pre><code>consul agent -dev</code></pre><h5 id="service服务启动"><a href="#service服务启动" class="headerlink" title="service服务启动"></a>service服务启动</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> mod tidy</span><br><span class="line"><span class="keyword">go</span> run main.<span class="keyword">go</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="web端服务启动"><a href="#web端服务启动" class="headerlink" title="web端服务启动"></a>web端服务启动</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> mod tidy</span><br><span class="line"><span class="keyword">go</span> run main.<span class="keyword">go</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="测试结果界面"><a href="#测试结果界面" class="headerlink" title="测试结果界面"></a>测试结果界面</h5><p><img src="https://raw.githubusercontent.com/Weixian13/img_hexo/main/17.png" alt></p>
+<h1 id="7-web端整合gin框架"><a href="#7-web端整合gin框架" class="headerlink" title="7.web端整合gin框架"></a>7.web端整合gin框架</h1><h3 id="1-添加gin路由"><a href="#1-添加gin路由" class="headerlink" title="1.添加gin路由"></a>1.添加gin路由</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加gin路由</span></span><br><span class="line">router := gin.Default()</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-服务添加router支持"><a href="#2-服务添加router支持" class="headerlink" title="2.服务添加router支持"></a>2.服务添加router支持</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//服务添加router支持</span></span><br><span class="line">web.Handler(router),</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-router结构调整"><a href="#3-router结构调整" class="headerlink" title="3.router结构调整"></a>3.router结构调整</h3><h5 id="总路由项目结构"><a href="#总路由项目结构" class="headerlink" title="总路由项目结构"></a>总路由项目结构</h5><p><code>web/router/router.go</code></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> all_router</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">"github.com/gin-gonic/gin"</span></span><br><span class="line">   <span class="string">"web/controller/user"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">InitRouter</span><span class="params">(router *gin.Engine)</span></span>  &#123;</span><br><span class="line">   <span class="comment">//路由组的设置</span></span><br><span class="line">   userGroup := router.Group(<span class="string">"/user"</span>)</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   <span class="comment">//调用分路由</span></span><br><span class="line">   <span class="comment">//web/controller/user/Router()</span></span><br><span class="line">   user.Router(userGroup)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="分路由项目结构"><a href="#分路由项目结构" class="headerlink" title="分路由项目结构"></a>分路由项目结构</h5><p><code>web/controller/user/router.go</code></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> user</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"github.com/gin-gonic/gin"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Router</span><span class="params">(router *gin.RouterGroup)</span></span> &#123;</span><br><span class="line">	<span class="comment">//样例</span></span><br><span class="line">	<span class="comment">//router.GET("/",handlerFuc)</span></span><br><span class="line">	<span class="comment">//router.POST("/",handlerFuc)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="main-go使用总路由"><a href="#main-go使用总路由" class="headerlink" title="main.go使用总路由"></a>main.go使用总路由</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加gin路由</span></span><br><span class="line">router := gin.Default()</span><br><span class="line"><span class="comment">//使用总路由</span></span><br><span class="line">all_router.InitRouter(router)</span><br><span class="line"><span class="comment">// 新建web服务</span></span><br><span class="line">service := web.NewService(</span><br><span class="line">	<span class="comment">// 服务名称</span></span><br><span class="line">	web.Name(<span class="string">"AES.web"</span>),</span><br><span class="line">	<span class="comment">// 服务版本</span></span><br><span class="line">	web.Version(<span class="string">"latest"</span>),</span><br><span class="line">	<span class="comment">// 服务添加consul支持</span></span><br><span class="line">	web.Registry(consulReg),</span><br><span class="line">	<span class="comment">// web服务监听的ip和port</span></span><br><span class="line">	web.Address(<span class="string">"127.0.0.1:8080"</span>),</span><br><span class="line">	web.Handler(router),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+      
+
+
+
+
+  <div class="declare">
+    <strong>本文作者：</strong>
+    
+      风与牧歌
+    
+    <br>
+    <strong>本文链接：</strong>
+    https://weixian13.github.io/2020/12/02/跨语言跨服务器通信/
+    <br>
+    <strong>版权声明：</strong>
+    <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"></a>
+    转载请注明出处！
+    
+  </div>
+
+
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/22/Micro服务启动/" class="archive-article-date">
-  	<time datetime="2020-11-22T01:01:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/22/Micro服务启动/">Micro服务启动</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">gRPC</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">protobuf</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">go</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://weixian13.github.io/2020/12/02/跨语言跨服务器通信/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/21/micro微服务的启动/" class="archive-article-date">
-  	<time datetime="2020-11-21T06:19:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-21</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/11/22/商场项目流程记录/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">商场项目流程记录</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/21/micro微服务的启动/">micro微服务的启动</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-环境安装"><span class="toc-number">1.</span> <span class="toc-text">1.环境安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Python"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.Python</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-proto的编译"><span class="toc-number">2.</span> <span class="toc-text">2.proto的编译</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Python-1"><span class="toc-number">2.0.1.</span> <span class="toc-text">1.Python</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Golang"><span class="toc-number">2.0.2.</span> <span class="toc-text">2.Golang</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#gRPC"><span class="toc-number">2.0.2.0.1.</span> <span class="toc-text">gRPC</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#micro"><span class="toc-number">2.0.2.0.2.</span> <span class="toc-text">micro</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-创建python-service端"><span class="toc-number">3.</span> <span class="toc-text">3.创建python service端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-创建protobuf文件"><span class="toc-number">3.0.1.</span> <span class="toc-text">1.创建protobuf文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-编译protobuf文件"><span class="toc-number">3.0.2.</span> <span class="toc-text">2.编译protobuf文件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-创建go-service端"><span class="toc-number">4.</span> <span class="toc-text">4.创建go service端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-命令创建"><span class="toc-number">4.0.1.</span> <span class="toc-text">1.命令创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-编译proto"><span class="toc-number">4.0.2.</span> <span class="toc-text">2.编译proto</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-添加consul支持的包"><span class="toc-number">4.0.3.</span> <span class="toc-text">3.添加consul支持的包</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#修改main-go"><span class="toc-number">4.0.3.0.1.</span> <span class="toc-text">修改main.go</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-创建go-web端"><span class="toc-number">5.</span> <span class="toc-text">5.创建go web端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-命令创建-1"><span class="toc-number">5.0.1.</span> <span class="toc-text">1.命令创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-添加consul支持的包"><span class="toc-number">5.0.2.</span> <span class="toc-text">2.添加consul支持的包</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#修改main-go-1"><span class="toc-number">5.0.2.0.1.</span> <span class="toc-text">修改main.go</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-handler的初步设置"><span class="toc-number">5.0.3.</span> <span class="toc-text">3.handler的初步设置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#导入gRPC包"><span class="toc-number">5.0.3.0.1.</span> <span class="toc-text">导入gRPC包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#导入service端的proto包"><span class="toc-number">5.0.3.0.2.</span> <span class="toc-text">导入service端的proto包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#WebCall函数的初步修改"><span class="toc-number">5.0.3.0.3.</span> <span class="toc-text">WebCall函数的初步修改</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-consul单点测试"><span class="toc-number">6.</span> <span class="toc-text">6.consul单点测试</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#consul服务启动"><span class="toc-number">6.0.0.0.1.</span> <span class="toc-text">consul服务启动</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#service服务启动"><span class="toc-number">6.0.0.0.2.</span> <span class="toc-text">service服务启动</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#web端服务启动"><span class="toc-number">6.0.0.0.3.</span> <span class="toc-text">web端服务启动</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试结果界面"><span class="toc-number">6.0.0.0.4.</span> <span class="toc-text">测试结果界面</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-web端整合gin框架"><span class="toc-number">7.</span> <span class="toc-text">7.web端整合gin框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-添加gin路由"><span class="toc-number">7.0.1.</span> <span class="toc-text">1.添加gin路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-服务添加router支持"><span class="toc-number">7.0.2.</span> <span class="toc-text">2.服务添加router支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-router结构调整"><span class="toc-number">7.0.3.</span> <span class="toc-text">3.router结构调整</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#总路由项目结构"><span class="toc-number">7.0.3.0.1.</span> <span class="toc-text">总路由项目结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#分路由项目结构"><span class="toc-number">7.0.3.0.2.</span> <span class="toc-text">分路由项目结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#main-go使用总路由"><span class="toc-number">7.0.3.0.3.</span> <span class="toc-text">main.go使用总路由</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/16/安装Micro环境/" class="archive-article-date">
-  	<time datetime="2020-11-16T08:22:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-16</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/16/安装Micro环境/">安装Micro环境</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/02/Go-sync包/" class="archive-article-date">
-  	<time datetime="2020-11-01T23:58:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/02/Go-sync包/">Go-sync包</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/01/Go-并发实现/" class="archive-article-date">
-  	<time datetime="2020-11-01T01:38:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/01/Go-并发实现/">Go-并发实现</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/30/Go-time库&日志/" class="archive-article-date">
-  	<time datetime="2020-10-30T09:39:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/30/Go-time库&日志/">Go-time库&amp;日志</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/30/Go-接口/" class="archive-article-date">
-  	<time datetime="2020-10-30T06:20:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/30/Go-接口/">Go-接口</a>
-    </h1>
-  
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'true' == true ? true : false;
+   var verify = 'true' == true ? true : false;
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "jmu3qtnrdhAcp3jGbByxL8lv-gzGzoHsz",
+            app_key: "eFYFjSI0M7BG848I6s5me5ij",
+            placeholder: "Just go go",
+            avatar:"mm"
+        });
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/29/Go-结构体/" class="archive-article-date">
-  	<time datetime="2020-10-29T01:25:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/29/Go-结构体/">Go-结构体</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/29/Go-基本语法/" class="archive-article-date">
-  	<time datetime="2020-10-29T01:23:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/29/Go-基本语法/">Go-基本语法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/29/Go-函数/" class="archive-article-date">
-  	<time datetime="2020-10-29T01:22:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/29/Go-函数/">Go-函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分享</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/tags/golang/page/2/">2</a><a class="extend next" rel="next" href="/tags/golang/page/2/">Next &raquo;</a>
-    </nav>
-  
+</script>
+  </section>
 
 
           </div>
@@ -750,9 +492,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
