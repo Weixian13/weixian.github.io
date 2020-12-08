@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="https://weixian13.github.io">
   <title>跨语言跨服务器通信 | WX&#39;s Tune</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.环境安装1.Python123pip3 install grpciopip3 install protobufpip3 install grpcio-tools  2.proto的编译1.Python1python3 -m grpc_tools.protoc --python_out=. --grpc_python_out=. -I.  [PATH/NAME]  2.GolanggRPC1">
+  <meta name="description" content="一步一步敲">
 <meta name="keywords" content="gRPC,protobuf,go,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="跨语言跨服务器通信">
 <meta property="og:url" content="https://weixian13.github.io/2020/12/02/跨语言跨服务器通信/index.html">
 <meta property="og:site_name" content="WX&#39;s Tune">
-<meta property="og:description" content="1.环境安装1.Python123pip3 install grpciopip3 install protobufpip3 install grpcio-tools  2.proto的编译1.Python1python3 -m grpc_tools.protoc --python_out=. --grpc_python_out=. -I.  [PATH/NAME]  2.GolanggRPC1">
+<meta property="og:description" content="一步一步敲">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://raw.githubusercontent.com/Weixian13/img_hexo/main/17.png">
-<meta property="og:updated_time" content="2020-12-07T01:55:38.538Z">
+<meta property="og:updated_time" content="2020-12-08T01:47:34.329Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="跨语言跨服务器通信">
-<meta name="twitter:description" content="1.环境安装1.Python123pip3 install grpciopip3 install protobufpip3 install grpcio-tools  2.proto的编译1.Python1python3 -m grpc_tools.protoc --python_out=. --grpc_python_out=. -I.  [PATH/NAME]  2.GolanggRPC1">
+<meta name="twitter:description" content="一步一步敲">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/Weixian13/img_hexo/main/17.png">
   
     <link rel="alternative" href="/atom.xml" title="WX&#39;s Tune" type="application/atom+xml">
@@ -189,7 +189,7 @@
 &nbsp;
 
         <span class="post-meta-item-text"><a>   字数统计: </span>
-        <span class="post-count">734字</a></span>
+        <span class="post-count">739字</a></span>
       </span>
     </span>
 
@@ -212,7 +212,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
+        <h1 id="一步一步敲"><a href="#一步一步敲" class="headerlink" title="一步一步敲"></a>一步一步敲</h1><a id="more"></a>
 
 <h1 id="1-环境安装"><a href="#1-环境安装" class="headerlink" title="1.环境安装"></a>1.环境安装</h1><h3 id="1-Python"><a href="#1-Python" class="headerlink" title="1.Python"></a>1.Python</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip3 install grpcio</span><br><span class="line">pip3 install protobuf</span><br><span class="line">pip3 install grpcio-tools</span><br></pre></td></tr></table></figure>
 
@@ -402,7 +402,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-环境安装"><span class="toc-number">1.</span> <span class="toc-text">1.环境安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Python"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.Python</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-proto的编译"><span class="toc-number">2.</span> <span class="toc-text">2.proto的编译</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Python-1"><span class="toc-number">2.0.1.</span> <span class="toc-text">1.Python</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Golang"><span class="toc-number">2.0.2.</span> <span class="toc-text">2.Golang</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#gRPC"><span class="toc-number">2.0.2.0.1.</span> <span class="toc-text">gRPC</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#micro"><span class="toc-number">2.0.2.0.2.</span> <span class="toc-text">micro</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-创建python-service端"><span class="toc-number">3.</span> <span class="toc-text">3.创建python service端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-创建protobuf文件"><span class="toc-number">3.0.1.</span> <span class="toc-text">1.创建protobuf文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-编译protobuf文件"><span class="toc-number">3.0.2.</span> <span class="toc-text">2.编译protobuf文件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-创建go-service端"><span class="toc-number">4.</span> <span class="toc-text">4.创建go service端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-命令创建"><span class="toc-number">4.0.1.</span> <span class="toc-text">1.命令创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-编译proto"><span class="toc-number">4.0.2.</span> <span class="toc-text">2.编译proto</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-添加consul支持的包"><span class="toc-number">4.0.3.</span> <span class="toc-text">3.添加consul支持的包</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#修改main-go"><span class="toc-number">4.0.3.0.1.</span> <span class="toc-text">修改main.go</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-创建go-web端"><span class="toc-number">5.</span> <span class="toc-text">5.创建go web端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-命令创建-1"><span class="toc-number">5.0.1.</span> <span class="toc-text">1.命令创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-添加consul支持的包"><span class="toc-number">5.0.2.</span> <span class="toc-text">2.添加consul支持的包</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#修改main-go-1"><span class="toc-number">5.0.2.0.1.</span> <span class="toc-text">修改main.go</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-handler的初步设置"><span class="toc-number">5.0.3.</span> <span class="toc-text">3.handler的初步设置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#导入gRPC包"><span class="toc-number">5.0.3.0.1.</span> <span class="toc-text">导入gRPC包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#导入service端的proto包"><span class="toc-number">5.0.3.0.2.</span> <span class="toc-text">导入service端的proto包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#WebCall函数的初步修改"><span class="toc-number">5.0.3.0.3.</span> <span class="toc-text">WebCall函数的初步修改</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-consul单点测试"><span class="toc-number">6.</span> <span class="toc-text">6.consul单点测试</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#consul服务启动"><span class="toc-number">6.0.0.0.1.</span> <span class="toc-text">consul服务启动</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#service服务启动"><span class="toc-number">6.0.0.0.2.</span> <span class="toc-text">service服务启动</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#web端服务启动"><span class="toc-number">6.0.0.0.3.</span> <span class="toc-text">web端服务启动</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试结果界面"><span class="toc-number">6.0.0.0.4.</span> <span class="toc-text">测试结果界面</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-web端整合gin框架"><span class="toc-number">7.</span> <span class="toc-text">7.web端整合gin框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-添加gin路由"><span class="toc-number">7.0.1.</span> <span class="toc-text">1.添加gin路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-服务添加router支持"><span class="toc-number">7.0.2.</span> <span class="toc-text">2.服务添加router支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-router结构调整"><span class="toc-number">7.0.3.</span> <span class="toc-text">3.router结构调整</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#总路由项目结构"><span class="toc-number">7.0.3.0.1.</span> <span class="toc-text">总路由项目结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#分路由项目结构"><span class="toc-number">7.0.3.0.2.</span> <span class="toc-text">分路由项目结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#main-go使用总路由"><span class="toc-number">7.0.3.0.3.</span> <span class="toc-text">main.go使用总路由</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一步一步敲"><span class="toc-number">1.</span> <span class="toc-text">一步一步敲</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-环境安装"><span class="toc-number">2.</span> <span class="toc-text">1.环境安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Python"><span class="toc-number">2.0.1.</span> <span class="toc-text">1.Python</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-proto的编译"><span class="toc-number">3.</span> <span class="toc-text">2.proto的编译</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Python-1"><span class="toc-number">3.0.1.</span> <span class="toc-text">1.Python</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Golang"><span class="toc-number">3.0.2.</span> <span class="toc-text">2.Golang</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#gRPC"><span class="toc-number">3.0.2.0.1.</span> <span class="toc-text">gRPC</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#micro"><span class="toc-number">3.0.2.0.2.</span> <span class="toc-text">micro</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-创建python-service端"><span class="toc-number">4.</span> <span class="toc-text">3.创建python service端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-创建protobuf文件"><span class="toc-number">4.0.1.</span> <span class="toc-text">1.创建protobuf文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-编译protobuf文件"><span class="toc-number">4.0.2.</span> <span class="toc-text">2.编译protobuf文件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-创建go-service端"><span class="toc-number">5.</span> <span class="toc-text">4.创建go service端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-命令创建"><span class="toc-number">5.0.1.</span> <span class="toc-text">1.命令创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-编译proto"><span class="toc-number">5.0.2.</span> <span class="toc-text">2.编译proto</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-添加consul支持的包"><span class="toc-number">5.0.3.</span> <span class="toc-text">3.添加consul支持的包</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#修改main-go"><span class="toc-number">5.0.3.0.1.</span> <span class="toc-text">修改main.go</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-创建go-web端"><span class="toc-number">6.</span> <span class="toc-text">5.创建go web端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-命令创建-1"><span class="toc-number">6.0.1.</span> <span class="toc-text">1.命令创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-添加consul支持的包"><span class="toc-number">6.0.2.</span> <span class="toc-text">2.添加consul支持的包</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#修改main-go-1"><span class="toc-number">6.0.2.0.1.</span> <span class="toc-text">修改main.go</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-handler的初步设置"><span class="toc-number">6.0.3.</span> <span class="toc-text">3.handler的初步设置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#导入gRPC包"><span class="toc-number">6.0.3.0.1.</span> <span class="toc-text">导入gRPC包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#导入service端的proto包"><span class="toc-number">6.0.3.0.2.</span> <span class="toc-text">导入service端的proto包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#WebCall函数的初步修改"><span class="toc-number">6.0.3.0.3.</span> <span class="toc-text">WebCall函数的初步修改</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-consul单点测试"><span class="toc-number">7.</span> <span class="toc-text">6.consul单点测试</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#consul服务启动"><span class="toc-number">7.0.0.0.1.</span> <span class="toc-text">consul服务启动</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#service服务启动"><span class="toc-number">7.0.0.0.2.</span> <span class="toc-text">service服务启动</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#web端服务启动"><span class="toc-number">7.0.0.0.3.</span> <span class="toc-text">web端服务启动</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试结果界面"><span class="toc-number">7.0.0.0.4.</span> <span class="toc-text">测试结果界面</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-web端整合gin框架"><span class="toc-number">8.</span> <span class="toc-text">7.web端整合gin框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-添加gin路由"><span class="toc-number">8.0.1.</span> <span class="toc-text">1.添加gin路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-服务添加router支持"><span class="toc-number">8.0.2.</span> <span class="toc-text">2.服务添加router支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-router结构调整"><span class="toc-number">8.0.3.</span> <span class="toc-text">3.router结构调整</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#总路由项目结构"><span class="toc-number">8.0.3.0.1.</span> <span class="toc-text">总路由项目结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#分路由项目结构"><span class="toc-number">8.0.3.0.2.</span> <span class="toc-text">分路由项目结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#main-go使用总路由"><span class="toc-number">8.0.3.0.3.</span> <span class="toc-text">main.go使用总路由</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -592,19 +592,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">分享</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">记录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">golang</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">基础</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -620,15 +608,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">分享</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">golang</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Typora</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -641,18 +641,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">生活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网站</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Yilia</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -669,6 +657,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">网站</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Yilia</a>
               </li>
              
               <li class="article-tag-list-item">
